@@ -12,7 +12,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	public override void _Process(double delta)
 	{
 		var sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/second_map.tscn");
-		var sceneInstance = sceneLoaderScene.Instantiate<second_map>();
+		var sceneInstance = sceneLoaderScene.Instantiate();
 		
 		var packedScene = new PackedScene();
 		var result = packedScene.Pack(sceneInstance);

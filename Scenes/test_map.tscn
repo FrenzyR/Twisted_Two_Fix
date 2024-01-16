@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://bl30r252lpmqk"]
 
-[ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_juisc"]
-[ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_rpnrf"]
-[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="3_ddk54"]
-[ext_resource type="Texture2D" uid="uid://b5h5m5jq88l7y" path="res://Resources/Directions/T_P5_Triangle_Alt.png" id="4_plpyx"]
-[ext_resource type="Texture2D" uid="uid://c6qbx3upsfrnw" path="res://Resources/fighting-game-special.png" id="5_bg30q"]
-[ext_resource type="Texture2D" uid="uid://c605fm7hsbi6o" path="res://Resources/Directions/T_P5_Triangle_Color_Alt.png" id="5_g3qns"]
-[ext_resource type="Texture2D" uid="uid://w37sdgdkdoxk" path="res://Resources/Healthbar_Below.png" id="6_hbrgf"]
-[ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="6_xqpej"]
-[ext_resource type="Texture2D" uid="uid://cpum2s30t8msm" path="res://Resources/Healthbar_Above.png" id="7_4acep"]
+[ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
+[ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_5p5wk"]
+[ext_resource type="Texture2D" uid="uid://b5h5m5jq88l7y" path="res://Resources/Directions/T_P5_Triangle_Alt.png" id="3_dm1n4"]
+[ext_resource type="Texture2D" uid="uid://c605fm7hsbi6o" path="res://Resources/Directions/T_P5_Triangle_Color_Alt.png" id="4_2sp7a"]
+[ext_resource type="Texture2D" uid="uid://c6qbx3upsfrnw" path="res://Resources/fighting-game-special.png" id="5_uh5hg"]
+[ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="6_3gvsw"]
+[ext_resource type="Texture2D" uid="uid://w37sdgdkdoxk" path="res://Resources/Healthbar_Below.png" id="7_nn1m7"]
+[ext_resource type="Texture2D" uid="uid://cpum2s30t8msm" path="res://Resources/Healthbar_Above.png" id="8_ratsh"]
+[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_507wq"]
 script/source = "using Godot;
@@ -19,7 +19,7 @@ public partial class node_2d : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		GD.Print(\"hello world\")
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -77,7 +77,7 @@ one_way_collision = true
 [node name="Synthwave-preview-big" type="Sprite2D" parent="."]
 position = Vector2(554, -1237)
 scale = Vector2(3.27639, 2.61875)
-texture = ExtResource("1_juisc")
+texture = ExtResource("1_slbw3")
 offset = Vector2(13.582, 526.396)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -88,29 +88,29 @@ scale = Vector2(1.125, 1.05455)
 texture_filter = 1
 position = Vector2(-84.2498, -233)
 scale = Vector2(5.30172, 2.8)
-texture = ExtResource("2_rpnrf")
+texture = ExtResource("2_5p5wk")
 
 [node name="Backward" type="TouchScreenButton" parent="."]
 position = Vector2(-587, 577)
 rotation = -1.5708
 scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("4_plpyx")
-texture_pressed = ExtResource("5_g3qns")
+texture_normal = ExtResource("3_dm1n4")
+texture_pressed = ExtResource("4_2sp7a")
 action = "ui_left"
 
 [node name="Forward" type="TouchScreenButton" parent="."]
 position = Vector2(-9.00002, 376)
 rotation = 1.5708
 scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("4_plpyx")
-texture_pressed = ExtResource("5_g3qns")
+texture_normal = ExtResource("3_dm1n4")
+texture_pressed = ExtResource("4_2sp7a")
 action = "ui_right"
 
 [node name="LightTest" type="TouchScreenButton" parent="."]
 position = Vector2(1450, 359)
 scale = Vector2(0.958, 1)
-texture_normal = ExtResource("5_bg30q")
-texture_pressed = ExtResource("6_xqpej")
+texture_normal = ExtResource("5_uh5hg")
+texture_pressed = ExtResource("6_3gvsw")
 action = "light"
 
 [node name="FutureHealthbar" type="TextureProgressBar" parent="."]
@@ -118,10 +118,10 @@ offset_left = -145.0
 offset_top = -156.0
 offset_right = 29.0
 offset_bottom = -130.0
-texture_under = ExtResource("6_hbrgf")
-texture_over = ExtResource("7_4acep")
+texture_under = ExtResource("7_nn1m7")
+texture_over = ExtResource("8_ratsh")
 
-[node name="Tohu" parent="." instance=ExtResource("3_ddk54")]
+[node name="Tohu" parent="." instance=ExtResource("9_wl8ix")]
 position = Vector2(1070, 192)
 scale = Vector2(2, 2)
 

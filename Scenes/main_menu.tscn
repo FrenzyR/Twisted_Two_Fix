@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://co8s56nvjh071"]
+
+[ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://night cities files/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_c21mb"]
+[ext_resource type="Script" path="res://Scenes/main_menu.cs" id="1_yqcbg"]
+[ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="3_an32g"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_yqcbg")
+
+[node name="Neon-preiview-big" type="Sprite2D" parent="."]
+position = Vector2(1155.5, 549)
+scale = Vector2(2.07726, 2.3375)
+texture = ExtResource("1_c21mb")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(1501, 375)
+texture_normal = ExtResource("3_an32g")
+action = "versus"
