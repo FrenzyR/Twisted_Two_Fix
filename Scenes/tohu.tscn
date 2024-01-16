@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddervq28wccmi"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.cs" id="1_x3f1o"]
+[ext_resource type="Texture2D" uid="uid://w662bo5rw5kl" path="res://Resources/frenzh.webp" id="2_lf1sf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc6di"]
+size = Vector2(105, 203.75)
+
+[node name="Tohu" type="CharacterBody2D"]
+script = ExtResource("1_x3f1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-423.5, 139.875)
+shape = SubResource("RectangleShape2D_gc6di")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-440, 148)
+scale = Vector2(1.84375, 1.83636)
+texture = ExtResource("2_lf1sf")

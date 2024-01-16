@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmynv08jex613"
+path="res://.godot/imported/moonlight.wav-99dcb421324f508d039b6f2a4e830db1.sample"
+
+[deps]
+
+source_file="res://night cities files/night cities files/music/moonlight/moonlight.wav"
+dest_files=["res://.godot/imported/moonlight.wav-99dcb421324f508d039b6f2a4e830db1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

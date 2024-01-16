@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b8pfyigjfenkq"
+path="res://.godot/imported/neon-alley.ogg-0c53926f3335302ca2fea55e093b15ae.oggvorbisstr"
+
+[deps]
+
+source_file="res://night cities files/night cities files/music/neon-alley/neon-alley.ogg"
+dest_files=["res://.godot/imported/neon-alley.ogg-0c53926f3335302ca2fea55e093b15ae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

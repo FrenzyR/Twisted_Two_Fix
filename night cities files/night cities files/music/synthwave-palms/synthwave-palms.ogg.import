@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk51oxphawd1f"
+path="res://.godot/imported/synthwave-palms.ogg-8210d62ff1759a0e99d2861892dc7834.oggvorbisstr"
+
+[deps]
+
+source_file="res://night cities files/night cities files/music/synthwave-palms/synthwave-palms.ogg"
+dest_files=["res://.godot/imported/synthwave-palms.ogg-8210d62ff1759a0e99d2861892dc7834.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

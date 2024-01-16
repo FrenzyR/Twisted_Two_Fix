@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brxf048xyifce"
+path="res://.godot/imported/sky-lines.ogg-45904209309f2c3a5a8f6df68d62de6f.oggvorbisstr"
+
+[deps]
+
+source_file="res://night cities files/night cities files/music/skylines/sky-lines.ogg"
+dest_files=["res://.godot/imported/sky-lines.ogg-45904209309f2c3a5a8f6df68d62de6f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmqm83nbntarw"
+path="res://.godot/imported/synthwave-palms.wav-7371101f60506cfc161adb31f64cb6ea.sample"
+
+[deps]
+
+source_file="res://night cities files/night cities files/music/synthwave-palms/synthwave-palms.wav"
+dest_files=["res://.godot/imported/synthwave-palms.wav-7371101f60506cfc161adb31f64cb6ea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
