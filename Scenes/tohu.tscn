@@ -434,7 +434,7 @@ texture_filter = 1
 position = Vector2(-431, 147)
 scale = Vector2(1.63406, 1.62391)
 sprite_frames = SubResource("SpriteFrames_ibknv")
-animation = &"run"
+animation = &"heavy"
 autoplay = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]

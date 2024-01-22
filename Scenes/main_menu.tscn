@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://co8s56nvjh071"]
+[gd_scene load_steps=7 format=3 uid="uid://co8s56nvjh071"]
 
 [ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://night cities files/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_c21mb"]
 [ext_resource type="Script" path="res://Scenes/main_menu.cs" id="1_yqcbg"]
 [ext_resource type="Texture2D" uid="uid://yalc7ktbsd3h" path="res://night cities files/night cities files/backgrounds/moonlight/menu_button01_UNPRESSED.png" id="3_7gxj4"]
 [ext_resource type="Texture2D" uid="uid://buk47q6a07qpv" path="res://night cities files/night cities files/backgrounds/moonlight/menu_button01_PRESSED.png" id="4_k12f5"]
+[ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/tohu/Cyberphont_pixels.ttf" id="5_16rw0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sfd5r"]
+font = ExtResource("5_16rw0")
+font_size = 8
+font_color = Color(0, 1, 1, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_yqcbg")
@@ -22,9 +29,11 @@ texture_pressed = ExtResource("4_k12f5")
 action = "versus"
 
 [node name="Label" type="Label" parent="TouchScreenButton"]
-offset_left = 23.6709
-offset_top = -3.9
-offset_right = 62.6709
-offset_bottom = 19.1
+texture_filter = 1
+offset_left = 22.9536
+offset_top = 3.15329
+offset_right = 86.9536
+offset_bottom = 26.1533
 size_flags_horizontal = 4
 text = "PLAY"
+label_settings = SubResource("LabelSettings_sfd5r")
