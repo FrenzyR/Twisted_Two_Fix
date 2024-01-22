@@ -23,6 +23,10 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		{
 			player.Play("light");
 		}
+		else if(Input.GetActionStrength("heavy") != 0)
+		{
+			player.Play("heavy");
+		}
 		else if(Input.GetActionStrength("ui_right") != 0)
 		{
 			player.Play("run");
