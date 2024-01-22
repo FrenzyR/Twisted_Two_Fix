@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
 [ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_5p5wk"]
-[ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
-[ext_resource type="Texture2D" uid="uid://ivykbjsswcsf" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_left.png" id="4_qvpig"]
-[ext_resource type="Texture2D" uid="uid://cs6yjjdwccl3j" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_right_outline.png" id="5_sgxkp"]
-[ext_resource type="Texture2D" uid="uid://c6qbx3upsfrnw" path="res://Resources/fighting-game-special.png" id="5_uh5hg"]
+[ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
+[ext_resource type="Texture2D" uid="uid://ivykbjsswcsf" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left.png" id="4_qvpig"]
+[ext_resource type="Texture2D" uid="uid://cs6yjjdwccl3j" path="res://Resources/Controls/Directions/Double/keyboard_arrow_right_outline.png" id="5_sgxkp"]
 [ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="6_3gvsw"]
-[ext_resource type="Texture2D" uid="uid://bnmsy8w7ma74r" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_right.png" id="6_cruwt"]
+[ext_resource type="Texture2D" uid="uid://bnmsy8w7ma74r" path="res://Resources/Controls/Directions/Double/keyboard_arrow_right.png" id="6_cruwt"]
+[ext_resource type="Texture2D" uid="uid://nqsrsmtwsg24" path="res://Resources/Controls/PlayStation 5/Double/playstation_button_color_cross.png" id="7_gp5pu"]
 [ext_resource type="Texture2D" uid="uid://w37sdgdkdoxk" path="res://Resources/Healthbar_Below.png" id="7_nn1m7"]
 [ext_resource type="Texture2D" uid="uid://cpum2s30t8msm" path="res://Resources/Healthbar_Above.png" id="8_ratsh"]
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
@@ -108,8 +108,8 @@ action = "ui_right"
 
 [node name="LightTest" type="TouchScreenButton" parent="."]
 position = Vector2(1450, 359)
-scale = Vector2(0.958, 1)
-texture_normal = ExtResource("5_uh5hg")
+scale = Vector2(1.71875, 1.76562)
+texture_normal = ExtResource("7_gp5pu")
 texture_pressed = ExtResource("6_3gvsw")
 action = "light"
 

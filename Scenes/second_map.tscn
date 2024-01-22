@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://night cities files/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="1_bcupq"]
 [ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_cu3s6"]
-[ext_resource type="Texture2D" uid="uid://b5h5m5jq88l7y" path="res://Resources/Directions/T_P5_Triangle_Alt.png" id="3_o03fk"]
-[ext_resource type="Texture2D" uid="uid://c605fm7hsbi6o" path="res://Resources/Directions/T_P5_Triangle_Color_Alt.png" id="4_ly0dy"]
-[ext_resource type="Texture2D" uid="uid://c6qbx3upsfrnw" path="res://Resources/fighting-game-special.png" id="5_cshiy"]
 [ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="6_3spx5"]
 [ext_resource type="Texture2D" uid="uid://w37sdgdkdoxk" path="res://Resources/Healthbar_Below.png" id="7_h777b"]
 [ext_resource type="Texture2D" uid="uid://cpum2s30t8msm" path="res://Resources/Healthbar_Above.png" id="8_jf2yh"]
@@ -14,6 +11,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85xuj"]
 size = Vector2(1445.86, 29.5502)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3kab"]
+load_path = "res://.godot/imported/T_P5_Triangle_Alt.png-1ee121c25bd0954fd58234cd151d031b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rxmek"]
+load_path = "res://.godot/imported/T_P5_Triangle_Color_Alt.png-42679436c9a3ce4f34514cd759126180.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0tbr"]
+load_path = "res://.godot/imported/fighting-game-special.png-10d8d4435bab833247f229f9684da183.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_sf8s1"]
 font_size = 38
@@ -70,22 +76,22 @@ texture = ExtResource("2_cu3s6")
 position = Vector2(-587, 577)
 rotation = -1.5708
 scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("3_o03fk")
-texture_pressed = ExtResource("4_ly0dy")
+texture_normal = SubResource("CompressedTexture2D_q3kab")
+texture_pressed = SubResource("CompressedTexture2D_rxmek")
 action = "ui_left"
 
 [node name="Forward" type="TouchScreenButton" parent="."]
 position = Vector2(-9.00002, 376)
 rotation = 1.5708
 scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("3_o03fk")
-texture_pressed = ExtResource("4_ly0dy")
+texture_normal = SubResource("CompressedTexture2D_q3kab")
+texture_pressed = SubResource("CompressedTexture2D_rxmek")
 action = "ui_right"
 
 [node name="LightTest" type="TouchScreenButton" parent="."]
 position = Vector2(1450, 359)
 scale = Vector2(0.958, 1)
-texture_normal = ExtResource("5_cshiy")
+texture_normal = SubResource("CompressedTexture2D_p0tbr")
 texture_pressed = ExtResource("6_3spx5")
 action = "light"
 

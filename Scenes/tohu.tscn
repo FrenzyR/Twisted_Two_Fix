@@ -436,4 +436,4 @@ scale = Vector2(1.63406, 1.62391)
 sprite_frames = SubResource("SpriteFrames_ibknv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0789805
+frame_progress = 0.0840366
