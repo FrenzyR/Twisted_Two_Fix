@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl30r252lpmqk"]
+[gd_scene load_steps=16 format=3 uid="uid://bl30r252lpmqk"]
 
 [ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
 [ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_5p5wk"]
-[ext_resource type="Texture2D" uid="uid://b5h5m5jq88l7y" path="res://Resources/Directions/T_P5_Triangle_Alt.png" id="3_dm1n4"]
-[ext_resource type="Texture2D" uid="uid://c605fm7hsbi6o" path="res://Resources/Directions/T_P5_Triangle_Color_Alt.png" id="4_2sp7a"]
+[ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
+[ext_resource type="Texture2D" uid="uid://ivykbjsswcsf" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_left.png" id="4_qvpig"]
+[ext_resource type="Texture2D" uid="uid://cs6yjjdwccl3j" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_right_outline.png" id="5_sgxkp"]
 [ext_resource type="Texture2D" uid="uid://c6qbx3upsfrnw" path="res://Resources/fighting-game-special.png" id="5_uh5hg"]
 [ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="6_3gvsw"]
+[ext_resource type="Texture2D" uid="uid://bnmsy8w7ma74r" path="res://Resources/Controls/Keyboard & Mouse/Double/keyboard_arrow_right.png" id="6_cruwt"]
 [ext_resource type="Texture2D" uid="uid://w37sdgdkdoxk" path="res://Resources/Healthbar_Below.png" id="7_nn1m7"]
 [ext_resource type="Texture2D" uid="uid://cpum2s30t8msm" path="res://Resources/Healthbar_Above.png" id="8_ratsh"]
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
@@ -91,19 +93,17 @@ scale = Vector2(5.30172, 2.8)
 texture = ExtResource("2_5p5wk")
 
 [node name="Backward" type="TouchScreenButton" parent="."]
-position = Vector2(-587, 577)
-rotation = -1.5708
-scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("3_dm1n4")
-texture_pressed = ExtResource("4_2sp7a")
+position = Vector2(-562, 347)
+scale = Vector2(2.03125, 1.84375)
+texture_normal = ExtResource("3_xgxoe")
+texture_pressed = ExtResource("4_qvpig")
 action = "ui_left"
 
 [node name="Forward" type="TouchScreenButton" parent="."]
-position = Vector2(-9.00002, 376)
-rotation = 1.5708
-scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("3_dm1n4")
-texture_pressed = ExtResource("4_2sp7a")
+position = Vector2(-281, 462)
+scale = Vector2(2.40625, 2.26562)
+texture_normal = ExtResource("5_sgxkp")
+texture_pressed = ExtResource("6_cruwt")
 action = "ui_right"
 
 [node name="LightTest" type="TouchScreenButton" parent="."]

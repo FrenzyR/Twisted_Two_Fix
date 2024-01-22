@@ -3,7 +3,7 @@ using System;
 
 public partial class CharacterBody2D : Godot.CharacterBody2D
 {
-	public const float Speed = 350.0f;
+	public const float Speed = 750.0f;
 	public const float JumpVelocity = -400.0f;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
