@@ -19,7 +19,6 @@ load_path = "res://.godot/imported/T_P5_Triangle_Alt.png-1ee121c25bd0954fd58234c
 load_path = "res://.godot/imported/T_P5_Triangle_Color_Alt.png-42679436c9a3ce4f34514cd759126180.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0tbr"]
-load_path = "res://.godot/imported/fighting-game-special.png-10d8d4435bab833247f229f9684da183.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_sf8s1"]
 font_size = 38

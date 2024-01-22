@@ -9,20 +9,30 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
+	
+
 	public override void _Process(double delta)
 	{
 		var sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/second_map.tscn");
 		var sceneInstance = sceneLoaderScene.Instantiate();
-		
+		var player = GetNode<AnimatedSprite2D>("AnimatedSprite");
 		var packedScene = new PackedScene();
 		var result = packedScene.Pack(sceneInstance);
 		Node parentNode = GetParent();
 		if (Input.GetActionStrength("light") != 0)
 		{
-			GD.Print("Entered");
-			GetTree().ChangeSceneToPacked(packedScene);
-			GD.Print("Exited");
+			player.Play("light");
 		}
+		else if(Input.GetActionStrength("ui_right") != 0)
+		{
+			player.Play("run");
+		}
+		else{
+			player.Play("idle");
+		}
+		//GD.Print("Entered");
+		//GetTree().ChangeSceneToPacked(packedScene);
+		//GD.Print("Exited");
 	}
 
 
