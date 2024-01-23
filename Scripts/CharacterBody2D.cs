@@ -8,28 +8,27 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
-
+	public AnimatedSprite2D player = AnimatedSprite2D. "";
 	
 
 	public override void _Process(double delta)
 	{
 		var sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/second_map.tscn");
 		var sceneInstance = sceneLoaderScene.Instantiate();
-		var player = GetNode<AnimatedSprite2D>("AnimatedSprite");
 		var packedScene = new PackedScene();
 		var result = packedScene.Pack(sceneInstance);
 		Node parentNode = GetParent();
-		if (Input.GetActionStrength("light") != 0)
+		if (Input.GetActionStrength("ui_right") != 0)
 		{
-			player.Play("light");
+			player.Play("run");
 		}
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			player.Play("heavy");
 		}
-		else if(Input.GetActionStrength("ui_right") != 0)
+		else if(Input.GetActionStrength("light") != 0)
 		{
-			player.Play("run");
+			player.Play("light");
 		}
 		else{
 			player.Play("idle");
@@ -47,7 +46,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 			var myLabel = GetNode("NormalLabel") as Label;
 			
 		
-		// Add the gravity.
+		
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
 
@@ -65,4 +64,11 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+	
+	private void _on_animated_sprite_animation_finished()
+	{
+		// Replace with function body.
+	}
+
 }
+

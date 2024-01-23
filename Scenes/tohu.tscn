@@ -434,7 +434,7 @@ texture_filter = 1
 position = Vector2(-431, 147)
 scale = Vector2(1.63406, 1.62391)
 sprite_frames = SubResource("SpriteFrames_ibknv")
-animation = &"idle"
-frame_progress = 0.597209
+animation = &"heavy"
+frame_progress = 0.415238
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_finished"]
