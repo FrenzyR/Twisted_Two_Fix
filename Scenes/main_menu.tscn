@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://co8s56nvjh071"]
 
-[ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://night cities files/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_c21mb"]
+[ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://Maps and OST/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_c21mb"]
 [ext_resource type="Script" path="res://Scenes/main_menu.cs" id="1_yqcbg"]
-[ext_resource type="Texture2D" uid="uid://yalc7ktbsd3h" path="res://night cities files/night cities files/backgrounds/moonlight/menu_button01_UNPRESSED.png" id="3_7gxj4"]
-[ext_resource type="Texture2D" uid="uid://buk47q6a07qpv" path="res://night cities files/night cities files/backgrounds/moonlight/menu_button01_PRESSED.png" id="4_k12f5"]
-[ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/tohu/Cyberphont_pixels.ttf" id="5_16rw0"]
+[ext_resource type="Texture2D" uid="uid://yalc7ktbsd3h" path="res://Maps and OST/night cities files/backgrounds/moonlight/menu_button01_UNPRESSED.png" id="3_7gxj4"]
+[ext_resource type="Texture2D" uid="uid://buk47q6a07qpv" path="res://Maps and OST/night cities files/backgrounds/moonlight/menu_button01_PRESSED.png" id="4_k12f5"]
+[ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="5_16rw0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfd5r"]
 font = ExtResource("5_16rw0")

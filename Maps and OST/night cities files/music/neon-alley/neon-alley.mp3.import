@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxmcy5by8h1h4"
+path="res://.godot/imported/neon-alley.mp3-65a382637ae400b5534801d7780f5c05.mp3str"
+
+[deps]
+
+source_file="res://Maps and OST/night cities files/music/neon-alley/neon-alley.mp3"
+dest_files=["res://.godot/imported/neon-alley.mp3-65a382637ae400b5534801d7780f5c05.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

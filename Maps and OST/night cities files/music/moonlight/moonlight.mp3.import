@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://daln54yjxhrde"
+path="res://.godot/imported/moonlight.mp3-d2599a666e52a3171245d274120b19ea.mp3str"
+
+[deps]
+
+source_file="res://Maps and OST/night cities files/music/moonlight/moonlight.mp3"
+dest_files=["res://.godot/imported/moonlight.mp3-d2599a666e52a3171245d274120b19ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

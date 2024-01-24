@@ -1,8 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bw3w2vsouq4sn"]
 
-[ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://night cities files/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="1_bcupq"]
+[ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://Maps and OST/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="1_bcupq"]
 [ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_cu3s6"]
-[ext_resource type="Texture2D" uid="uid://budi0j5r1eebo" path="res://Resources/fighting-game-heavy.png" id="6_3spx5"]
 [ext_resource type="Texture2D" uid="uid://w37sdgdkdoxk" path="res://Resources/Healthbar_Below.png" id="7_h777b"]
 [ext_resource type="Texture2D" uid="uid://cpum2s30t8msm" path="res://Resources/Healthbar_Above.png" id="8_jf2yh"]
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_d880v"]
@@ -19,6 +18,9 @@ load_path = "res://.godot/imported/T_P5_Triangle_Alt.png-1ee121c25bd0954fd58234c
 load_path = "res://.godot/imported/T_P5_Triangle_Color_Alt.png-42679436c9a3ce4f34514cd759126180.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0tbr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bkmyn"]
+load_path = "res://.godot/imported/fighting-game-heavy.png-d915d05f11926ce754cf47622a0e1a88.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_sf8s1"]
 font_size = 38
@@ -91,7 +93,7 @@ action = "ui_right"
 position = Vector2(1450, 359)
 scale = Vector2(0.958, 1)
 texture_normal = SubResource("CompressedTexture2D_p0tbr")
-texture_pressed = ExtResource("6_3spx5")
+texture_pressed = SubResource("CompressedTexture2D_bkmyn")
 action = "light"
 
 [node name="FutureHealthbar" type="TextureProgressBar" parent="."]

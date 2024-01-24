@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dymf8nh2cbqxn"
+path="res://.godot/imported/sky-lines.wav-8ff7271902b51499a6022223569c47e3.sample"
+
+[deps]
+
+source_file="res://Maps and OST/night cities files/music/skylines/sky-lines.wav"
+dest_files=["res://.godot/imported/sky-lines.wav-8ff7271902b51499a6022223569c47e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
