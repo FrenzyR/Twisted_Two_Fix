@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
 [ext_resource type="Texture2D" uid="uid://sxpomirbjnni" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle_outline.png" id="10_pwcer"]
 [ext_resource type="Texture2D" uid="uid://b85ceiifcjjht" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross_outline.png" id="12_woeru"]
-[ext_resource type="PackedScene" uid="uid://dt3gdotj21pcn" path="res://Resources/lifebar_game/healthbar.tscn" id="14_mfa3h"]
+[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="14_mfa3h"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_507wq"]
 script/source = "using Godot;

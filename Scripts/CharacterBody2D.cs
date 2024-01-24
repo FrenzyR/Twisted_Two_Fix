@@ -1,15 +1,27 @@
 using Godot;
-using System;
+
+namespace project_attempt.Scripts;
 
 public partial class CharacterBody2D : Godot.CharacterBody2D
 {
 	public const float Speed = 750.0f;
 	public const float JumpVelocity = -400.0f;
+	public float health = 0;
+	public project_attempt.Scripts.Healthbar healthbar = null;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 	
 	
+	public override void _Ready()
+	{
+		
+		this.healthbar = GetNode<project_attempt.Scripts.Healthbar>("Healthbar");
+		this.health = 100;
+		this.healthbar.Health = this.health;
+		this.healthbar.initialize_health(this.health);
+		
+	}
 
 	public override void _Process(double delta)
 	{
@@ -30,6 +42,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			player.Play("heavy");
+			this.health -= 2;
 		}
 		else if(Input.GetActionStrength("light") != 0)
 		{
@@ -48,7 +61,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 			
-			var myLabel = GetNode("NormalLabel") as Label;
+		
 			
 		
 		
@@ -76,4 +89,3 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	}
 
 }
-
