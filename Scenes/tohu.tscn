@@ -390,8 +390,8 @@ shape = SubResource("RectangleShape2D_gc6di")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-387, 126)
-scale = Vector2(1.64286, 1.63725)
+position = Vector2(-390, 103)
+scale = Vector2(1.89944, 2.04739)
 sprite_frames = SubResource("SpriteFrames_y86ei")
 animation = &"heavy"
-frame_progress = 0.0396129
+frame_progress = 0.574134

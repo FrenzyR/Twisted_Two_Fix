@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl30r252lpmqk"]
+[gd_scene load_steps=17 format=3 uid="uid://bl30r252lpmqk"]
 
 [ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
 [ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
 [ext_resource type="Texture2D" uid="uid://sxpomirbjnni" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle_outline.png" id="10_pwcer"]
 [ext_resource type="Texture2D" uid="uid://b85ceiifcjjht" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross_outline.png" id="12_woeru"]
-[ext_resource type="Texture2D" uid="uid://ck3ue2l6q5ph1" path="res://Resources/lifebar_game/health.png" id="14_c0l42"]
+[ext_resource type="PackedScene" uid="uid://dt3gdotj21pcn" path="res://Resources/lifebar_game/healthbar.tscn" id="14_mfa3h"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_507wq"]
 script/source = "using Godot;
@@ -39,10 +39,6 @@ public partial class node_2d : Node2D
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh02v"]
 size = Vector2(1445.86, 29.5502)
-
-[sub_resource type="LabelSettings" id="LabelSettings_pqp3c"]
-font_size = 38
-font_color = Color(0.937255, 0.407843, 0.819608, 1)
 
 [node name="FirstMap" type="Node2D"]
 position = Vector2(584, 312)
@@ -92,19 +88,6 @@ scale = Vector2(1.125, 1.05455)
 position = Vector2(1070, 192)
 scale = Vector2(2, 2)
 
-[node name="NormalLabel" type="Label" parent="Tohu"]
-anchors_preset = -1
-anchor_left = -0.432
-anchor_top = -0.463
-offset_left = 90.5
-offset_top = 27.0
-offset_right = 282.91
-offset_bottom = 80.0
-text = "NORMAL:
-"
-label_settings = SubResource("LabelSettings_pqp3c")
-horizontal_alignment = 1
-
 [node name="Backward" type="TouchScreenButton" parent="."]
 texture_filter = 1
 position = Vector2(-562, 347)
@@ -113,36 +96,37 @@ texture_normal = ExtResource("3_xgxoe")
 texture_pressed = ExtResource("4_qvpig")
 action = "ui_left"
 
-[node name="Forward" type="TouchScreenButton" parent="."]
+[node name="Forward" type="TouchScreenButton" parent="Backward"]
 texture_filter = 1
-position = Vector2(-281, 462)
-scale = Vector2(2.40625, 2.26562)
+position = Vector2(138.338, 62.3729)
+scale = Vector2(1.18462, 1.22881)
 texture_normal = ExtResource("5_sgxkp")
 texture_pressed = ExtResource("6_cruwt")
 action = "ui_right"
 
-[node name="Heavy" type="TouchScreenButton" parent="."]
-position = Vector2(1345, 314)
-scale = Vector2(1.71875, 1.76562)
+[node name="Heavy" type="TouchScreenButton" parent="Backward"]
+position = Vector2(938.831, -17.8983)
+scale = Vector2(0.846154, 0.957624)
 texture_normal = ExtResource("7_464ue")
 texture_pressed = ExtResource("8_gwgd4")
 action = "heavy"
 
-[node name="Special" type="TouchScreenButton" parent="."]
-position = Vector2(1537, 350)
-scale = Vector2(1.71875, 1.76562)
+[node name="Special" type="TouchScreenButton" parent="Backward"]
+position = Vector2(1033.35, 1.62711)
+scale = Vector2(0.846154, 0.957624)
 texture_normal = ExtResource("9_6aych")
 texture_pressed = ExtResource("10_pwcer")
 
-[node name="Light" type="TouchScreenButton" parent="."]
+[node name="Light" type="TouchScreenButton" parent="Backward"]
 texture_filter = 1
-position = Vector2(1345, 503)
-scale = Vector2(1.71875, 1.76562)
+position = Vector2(938.831, 84.6102)
+scale = Vector2(0.846154, 0.957624)
 texture_normal = ExtResource("7_gp5pu")
 texture_pressed = ExtResource("12_woeru")
 action = "light"
 
-[node name="Health" type="Sprite2D" parent="."]
-position = Vector2(-438, -175)
-scale = Vector2(8.1, 7.21428)
-texture = ExtResource("14_c0l42")
+[node name="Healthbar" parent="." instance=ExtResource("14_mfa3h")]
+offset_left = -522.0
+offset_top = -263.0
+offset_right = 141.0
+offset_bottom = -217.0
