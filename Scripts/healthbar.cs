@@ -15,7 +15,7 @@ public partial class Healthbar : ProgressBar
 		{
 			var previousHealth = _health;
 			_health = (float)Mathf.Clamp(value, 0f, Double.MaxValue);
-			Value = _health;
+			this.Value = _health;
 				
 			if(_health <= 0)
 			{
@@ -50,10 +50,7 @@ public partial class Healthbar : ProgressBar
 		this._damageBar.Value = this.Health;
 	}
 
-	
-	public override void _Process(double delta)
-	{
-	}
+
 	
 	private void _on_healthbar_timer_timeout()
 	{

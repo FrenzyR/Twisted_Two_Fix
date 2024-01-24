@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl30r252lpmqk"]
+[gd_scene load_steps=16 format=3 uid="uid://bl30r252lpmqk"]
 
 [ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
 [ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
 [ext_resource type="Texture2D" uid="uid://sxpomirbjnni" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle_outline.png" id="10_pwcer"]
 [ext_resource type="Texture2D" uid="uid://b85ceiifcjjht" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross_outline.png" id="12_woeru"]
-[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="14_mfa3h"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_507wq"]
 script/source = "using Godot;
@@ -85,7 +84,7 @@ position = Vector2(589, 222)
 scale = Vector2(1.125, 1.05455)
 
 [node name="Tohu" parent="." instance=ExtResource("9_wl8ix")]
-position = Vector2(1070, 192)
+position = Vector2(980, 195)
 scale = Vector2(2, 2)
 
 [node name="Backward" type="TouchScreenButton" parent="."]
@@ -124,9 +123,3 @@ scale = Vector2(0.846154, 0.957624)
 texture_normal = ExtResource("7_gp5pu")
 texture_pressed = ExtResource("12_woeru")
 action = "light"
-
-[node name="Healthbar" parent="." instance=ExtResource("14_mfa3h")]
-offset_left = -522.0
-offset_top = -263.0
-offset_right = 141.0
-offset_bottom = -217.0

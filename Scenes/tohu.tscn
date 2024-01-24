@@ -1,7 +1,8 @@
-[gd_scene load_steps=58 format=3 uid="uid://ddervq28wccmi"]
+[gd_scene load_steps=59 format=3 uid="uid://ddervq28wccmi"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.cs" id="1_x3f1o"]
 [ext_resource type="Texture2D" uid="uid://co4puuggp8tm3" path="res://Resources/tohu/Tohu_Anims/FrenzoWalk_Ass_ets.webp" id="6_5hanq"]
+[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="7_eh0qs"]
 [ext_resource type="Texture2D" uid="uid://kqljbt3k5ith" path="res://Resources/tohu/Tohu_Anims/FrenzoRun_Ass_ets.webp" id="7_hkrdh"]
 [ext_resource type="Texture2D" uid="uid://bf176w8jc4a6q" path="res://Resources/tohu/Tohu_Anims/frenzo_ass_ets.webp" id="8_hkw36"]
 [ext_resource type="Texture2D" uid="uid://c558qbateb0x7" path="res://Resources/tohu/Tohu_Anims/FrenzoLigt_Ass_ets.webp" id="9_ki1g0"]
@@ -396,3 +397,11 @@ sprite_frames = SubResource("SpriteFrames_y86ei")
 animation = &"heavy"
 frame = 5
 frame_progress = 0.6779
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("7_eh0qs")]
+offset_left = 45.0
+offset_top = 37.0
+offset_right = 642.0
+offset_bottom = 81.0

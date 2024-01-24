@@ -16,10 +16,9 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	public override void _Ready()
 	{
 		
-		this.healthbar = GetNode<project_attempt.Scripts.Healthbar>("Healthbar");
-		this.health = 100;
-		this.healthbar.Health = this.health;
-		this.healthbar.initialize_health(this.health);
+		this.healthbar = GetNode<Healthbar>("CanvasLayer/
+		Healthbar");
+		this.healthbar.initialize_health(100);
 		
 	}
 
