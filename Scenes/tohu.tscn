@@ -394,4 +394,4 @@ position = Vector2(-387, 126)
 scale = Vector2(1.64286, 1.63725)
 sprite_frames = SubResource("SpriteFrames_y86ei")
 animation = &"heavy"
-frame_progress = 0.0306123
+frame_progress = 0.0396129
