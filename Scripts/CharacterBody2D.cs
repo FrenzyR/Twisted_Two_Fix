@@ -40,7 +40,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			player.Play("heavy");
-			this._health -= 2;
+			this.Healthbar.Health -= 2;
 		}
 		else if(Input.GetActionStrength("light") != 0)
 		{
