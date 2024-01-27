@@ -6,19 +6,18 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 {
 	public const float Speed = 750.0f;
 	public const float JumpVelocity = -400.0f;
-	public float health = 0;
-	public project_attempt.Scripts.Healthbar healthbar = null;
+	private float _health = 0;
+	public Healthbar Healthbar = null;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
-	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 	
 	
 	public override void _Ready()
 	{
 		
-		this.healthbar = GetNode<Healthbar>("CanvasLayer/
-		Healthbar");
-		this.healthbar.initialize_health(100);
+		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
+		this.Healthbar.initialize_health(100);
 		
 	}
 
@@ -41,7 +40,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			player.Play("heavy");
-			this.health -= 2;
+			this._health -= 2;
 		}
 		else if(Input.GetActionStrength("light") != 0)
 		{
@@ -65,7 +64,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		
 		
 		if (!IsOnFloor())
-			velocity.Y += gravity * (float)delta;
+			velocity.Y += Gravity * (float)delta;
 
 
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
