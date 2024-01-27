@@ -255,6 +255,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_u7osk")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_u7osk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7osk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7osk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7osk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcr8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcr8q")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dcr8q")
 }, {
 "duration": 1.0,
@@ -274,6 +292,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2lmdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4oxe")
 }],
 "loop": true,
 "name": &"heavy",
@@ -395,7 +431,6 @@ position = Vector2(-390, 103)
 scale = Vector2(1.89944, 2.04739)
 sprite_frames = SubResource("SpriteFrames_y86ei")
 animation = &"backward_walk"
-frame_progress = 0.694304
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -404,3 +439,6 @@ offset_left = 45.0
 offset_top = 37.0
 offset_right = 642.0
 offset_bottom = 81.0
+
+[connection signal="animation_changed" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_changed"]
+[connection signal="animation_looped" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_looped"]
