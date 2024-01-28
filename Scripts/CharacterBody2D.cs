@@ -45,7 +45,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		}
 		else if(Input.GetActionStrength("ui_left") != 0)
 		{
-			player.Play("backward_walk");
+			player.Play("backward");
 			_animationPlaying = false;
 		}
 		else if(Input.GetActionStrength("heavy") != 0)
