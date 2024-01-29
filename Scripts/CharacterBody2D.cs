@@ -59,9 +59,15 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 			player.Play("light");
 			_speed = 0.0f;
 		}
-		else{
+		
+		else if(Input.GetActionStrength("special") != 0)
+		{
+			player.Play("special");
+			_speed = 0.0f;
 			
-			
+			}
+		else
+		{
 			player.Play("idle");	
 			_animationPlaying = false;
 
@@ -72,6 +78,8 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		//GetTree().ChangeSceneToPacked(packedScene);
 		//GD.Print("Exited");
 	}
+
+}}
 
 
 	public override void _PhysicsProcess(double delta)
