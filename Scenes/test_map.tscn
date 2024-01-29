@@ -115,6 +115,7 @@ position = Vector2(1033.35, 1.62711)
 scale = Vector2(0.846154, 0.957624)
 texture_normal = ExtResource("9_6aych")
 texture_pressed = ExtResource("10_pwcer")
+action = "special"
 
 [node name="Light" type="TouchScreenButton" parent="Backward"]
 texture_filter = 1
