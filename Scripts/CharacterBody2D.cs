@@ -65,7 +65,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 			player.Play("special");
 			_speed = 0.0f;
 			
-			}
+		}
 		else
 		{
 			player.Play("idle");	
@@ -79,7 +79,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		//GD.Print("Exited");
 	}
 
-}}
+
 
 
 	public override void _PhysicsProcess(double delta)
