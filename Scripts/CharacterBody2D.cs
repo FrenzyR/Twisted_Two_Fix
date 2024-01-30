@@ -10,7 +10,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	public const float JumpVelocity = -400.0f;
 	private float _health = 0;
 	public Healthbar Healthbar = null;
-	public CollisionShape2D special_hitbox = null;
+	
 	private bool _animationPlaying = false;
 	private float knockback = 1.0f;
 
@@ -23,7 +23,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		
 		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
 		this.Healthbar.initialize_health(100);
-		this.special_hitbox = GetNode<CollisionShape2D>("Special_Hitbox");
+		
 		
 	}
 
@@ -31,7 +31,8 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	{
 		var sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/second_map.tscn");
 		var sceneInstance = sceneLoaderScene.Instantiate();
-		var player = GetNode<AnimatedSprite2D>(_characterNodePath);
+		var player = GetNode<AnimatedSprite2D>("AnimatedSprite");
+		var hitbox = GetNode<CollisionShape2D>(_characterNodePath);
 		AnimationPlayer animPlayer = new AnimationPlayer();
 		
 		var packedScene = new PackedScene();
@@ -69,21 +70,23 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			player.Play("special");
-			GD.Print(this.special_hitbox);
+			hitbox.Disabled = false;
+			
 			_speed = 0.0f;
 			
 		}
 		else
 		{
 			player.Play("idle");	
+			hitbox.Disabled = true;
 			_animationPlaying = false;
 
 			
 			_speed = 750.0f;
 		}
-		//GD.Print("Entered");
+		
 		//GetTree().ChangeSceneToPacked(packedScene);
-		//GD.Print("Exited");
+		
 	}
 
 
@@ -114,8 +117,9 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 
 	private void _on_animated_sprite_animation_changed()
 	{
-		GD.Print("anim changed");
+		
 		_animationPlaying = true;
+		
 	}
 
 

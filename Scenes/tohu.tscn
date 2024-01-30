@@ -533,9 +533,12 @@ _characterNodePath = NodePath("Special_Hitbox")
 position = Vector2(-423.5, 139.875)
 shape = SubResource("RectangleShape2D_gc6di")
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="Special_Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-232, 75)
 shape = SubResource("CircleShape2D_c2rf5")
+disabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
