@@ -5,11 +5,14 @@ namespace project_attempt.Scripts;
 
 public partial class CharacterBody2D : Godot.CharacterBody2D
 {
+	[Export] private NodePath _characterNodePath = null;
 	private float _speed = 750.0f;
 	public const float JumpVelocity = -400.0f;
 	private float _health = 0;
 	public Healthbar Healthbar = null;
+	public CollisionShape2D special_hitbox = null;
 	private bool _animationPlaying = false;
+	private float knockback = 1.0f;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -20,6 +23,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		
 		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
 		this.Healthbar.initialize_health(100);
+		this.special_hitbox = GetNode<CollisionShape2D>("Special_Hitbox");
 		
 	}
 
@@ -27,7 +31,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 	{
 		var sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/second_map.tscn");
 		var sceneInstance = sceneLoaderScene.Instantiate();
-		var player = GetNode<AnimatedSprite2D>("AnimatedSprite");
+		var player = GetNode<AnimatedSprite2D>(_characterNodePath);
 		AnimationPlayer animPlayer = new AnimationPlayer();
 		
 		var packedScene = new PackedScene();
@@ -40,12 +44,14 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		if (Input.GetActionStrength("ui_right") != 0)
 		{
 			player.Play("run");
+			knockback = 1.0f;
 			_animationPlaying = false;
 			
 		}
 		else if(Input.GetActionStrength("ui_left") != 0)
 		{
 			player.Play("backward");
+			knockback = 3.0f;
 			_animationPlaying = false;
 		}
 		else if(Input.GetActionStrength("heavy") != 0)
@@ -63,6 +69,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			player.Play("special");
+			GD.Print(this.special_hitbox);
 			_speed = 0.0f;
 			
 		}
@@ -90,11 +97,11 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		if (!IsOnFloor())
 			velocity.Y += Gravity * (float)delta;
 
-
+		
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
-			velocity.X = direction.X * _speed;
+			velocity.X = direction.X * _speed * knockback;
 		}
 		else
 		{
@@ -117,4 +124,23 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		_animationPlaying = false;
 	}
 
+		private void _on_special_hitbox_child_entered_tree(Node node)
+	{
+		Vector2 velocity = Velocity;
+		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		knockback = 5.0f;
+		velocity.X = direction.X * _speed * knockback;
+	}
+
+
+	private void _on_special_hitbox_child_exiting_tree(Node node)
+	{
+		Vector2 velocity = Velocity;
+		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		velocity.X = Mathf.MoveToward(Velocity.X, 0, _speed);
+	}
+
+
 }
+
+

@@ -1,11 +1,72 @@
 [gd_scene load_steps=6 format=3 uid="uid://g56orwkonkxu"]
 
-[ext_resource type="Script" path="res://Scripts/healthbar.cs" id="1_ax7o8"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yobcv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwxm"]
 bg_color = Color(0.878431, 0.121569, 0.470588, 1)
+
+[sub_resource type="CSharpScript" id="CSharpScript_lvwr1"]
+script/source = "using System;
+using Godot;
+
+namespace project_attempt.Scripts;
+
+public partial class Healthbar : ProgressBar
+{
+	private Timer _timer;
+	private ProgressBar _damageBar;
+	private float _health;
+	public float Health 
+	{ 
+		get => _health;
+		set
+		{
+			var previousHealth = _health;
+			_health = (float)Mathf.Clamp(value, 0f, Double.MaxValue);
+			this.Value = _health;
+				
+			if(_health <= 0)
+			{
+				QueueFree();
+			}
+				
+			if(_health < previousHealth)
+			{
+				_timer.Start();
+			}
+			else
+			{
+				_damageBar.Value = _health;
+			}
+		} 
+	}
+	
+	
+	public override void _Ready()
+	{
+		
+		this._timer = GetNode<Timer>(\"HealthbarTimer\");
+		this._damageBar = GetNode<ProgressBar>(\"DamageBar\");
+	}
+
+	public void initialize_health(float health){
+		
+		this.Health = health;
+		this.MaxValue = this.Health;
+		this.Value = this.Health;
+		this._damageBar.MaxValue = this.Health;
+		this._damageBar.Value = this.Health;
+	}
+
+
+	
+	private void _on_healthbar_timer_timeout()
+	{
+		this._damageBar.Value = this.Health;
+	}
+	
+}
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r30dh"]
 bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
@@ -27,7 +88,7 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_yobcv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8kwxm")
 value = 60.0
 show_percentage = false
-script = ExtResource("1_ax7o8")
+script = SubResource("CSharpScript_lvwr1")
 
 [node name="DamageBar" type="ProgressBar" parent="."]
 z_index = -1
