@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl30r252lpmqk"]
+[gd_scene load_steps=17 format=3 uid="uid://bl30r252lpmqk"]
 
 [ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
 [ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
 [ext_resource type="Texture2D" uid="uid://sxpomirbjnni" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle_outline.png" id="10_pwcer"]
 [ext_resource type="Texture2D" uid="uid://b85ceiifcjjht" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross_outline.png" id="12_woeru"]
+[ext_resource type="PackedScene" uid="uid://18t7dvjrrhk0" path="res://Scenes/sevenee.tscn" id="13_a4jal"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_507wq"]
 script/source = "using Godot;
@@ -37,7 +38,7 @@ public partial class node_2d : Node2D
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mxu26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh02v"]
-size = Vector2(1445.86, 29.5502)
+size = Vector2(1637.83, 132.808)
 
 [node name="FirstMap" type="Node2D"]
 position = Vector2(584, 312)
@@ -51,7 +52,8 @@ scale = Vector2(1.61111, 1.39792)
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(356.449, 516.839)
+position = Vector2(410.897, 576.929)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_uh02v")
 one_way_collision = true
 
@@ -68,13 +70,12 @@ one_way_collision = true
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(1083.1, 171.326)
+position = Vector2(1063.86, 152.727)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uh02v")
-one_way_collision = true
 
 [node name="Synthwave-preview-big" type="Sprite2D" parent="."]
-position = Vector2(554, -1237)
+position = Vector2(540, -1227)
 scale = Vector2(3.27639, 2.61875)
 texture = ExtResource("1_slbw3")
 offset = Vector2(13.582, 526.396)
@@ -84,7 +85,7 @@ position = Vector2(589, 222)
 scale = Vector2(1.125, 1.05455)
 
 [node name="Tohu" parent="." instance=ExtResource("9_wl8ix")]
-position = Vector2(980, 195)
+position = Vector2(1164, 123)
 scale = Vector2(2, 2)
 
 [node name="Backward" type="TouchScreenButton" parent="."]
@@ -124,3 +125,7 @@ scale = Vector2(0.846154, 0.957624)
 texture_normal = ExtResource("7_gp5pu")
 texture_pressed = ExtResource("12_woeru")
 action = "light"
+
+[node name="Sevenee" parent="." instance=ExtResource("13_a4jal")]
+position = Vector2(1659, 83)
+scale = Vector2(2, 2)

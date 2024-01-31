@@ -1,0 +1,124 @@
+[gd_scene load_steps=14 format=3 uid="uid://18t7dvjrrhk0"]
+
+[ext_resource type="Script" path="res://Scripts/Sevenee.cs" id="1_ap1xc"]
+[ext_resource type="Texture2D" uid="uid://baf36vor7dtk1" path="res://Resources/sevenee/SevenId_Ass_es.png" id="5_lqbxf"]
+[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="8_1trn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tkj3"]
+size = Vector2(105, 203.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b33c8"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt6ce"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m6kg"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jiyu"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r61cs"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1lbx"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eakmk"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6eqb"]
+atlas = ExtResource("5_lqbxf")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gntan"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"backward",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"heavy",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b33c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt6ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m6kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jiyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r61cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1lbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eakmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6eqb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"light",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"special",
+"speed": 20.0
+}]
+
+[node name="Sevenee" type="CharacterBody2D"]
+script = ExtResource("1_ap1xc")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(-423.5, 139.875)
+shape = SubResource("RectangleShape2D_3tkj3")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-421, 84)
+scale = Vector2(1.86043, 1.7537)
+sprite_frames = SubResource("SpriteFrames_gntan")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.804854
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("8_1trn4")]
+offset_left = 1688.0
+offset_top = 33.0
+offset_right = 2285.0
+offset_bottom = 77.0
+metadata/_edit_use_anchors_ = true

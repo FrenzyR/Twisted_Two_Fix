@@ -1,16 +1,17 @@
+using System;
 using Godot;
 
 namespace project_attempt.Scripts;
 
 
-public partial class CharacterBody2D : Godot.CharacterBody2D
+public partial class Sevenee : Godot.CharacterBody2D
 {
-	[Export] private NodePath _characterNodePath = null;
-	private float _speed = 750.0f;
+	//[Export] private NodePath _characterNodePath = null;
+	private float _speed = 450.0f;
 	public const float JumpVelocity = -400.0f;
 	private float _health = 0;
 	public Healthbar Healthbar = null;
-	public Sevenee Sevenee;
+	public Vector2 velocity;
 	
 	private bool _animationPlaying = false;
 	private float knockback = 1.0f;
@@ -24,21 +25,19 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		
 		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
 		this.Healthbar.initialize_health(100);
-		this.Sevenee = GetNode<Sevenee>("");
 		
 		
 	}
 
 	public override void _Process(double delta)
 	{
-		var sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/second_map.tscn");
-		var sceneInstance = sceneLoaderScene.Instantiate();
 		var player = GetNode<AnimatedSprite2D>("AnimatedSprite");
-		var hitbox = GetNode<CollisionShape2D>(_characterNodePath);
+		//var hitbox = GetNode<CollisionShape2D>(_characterNodePath);
 		AnimationPlayer animPlayer = new AnimationPlayer();
 		
-		var packedScene = new PackedScene();
-		var result = packedScene.Pack(sceneInstance);
+		
+		player.FlipH = true;
+		
 		Node parentNode = GetParent();
 		if (_animationPlaying == true)
 		{
@@ -47,14 +46,14 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		if (Input.GetActionStrength("ui_right") != 0)
 		{
 			player.Play("run");
-			knockback = 1.0f;
+			
 			_animationPlaying = false;
 			
 		}
 		else if(Input.GetActionStrength("ui_left") != 0)
 		{
 			player.Play("backward");
-			knockback = 3.0f;
+			
 			_animationPlaying = false;
 		}
 		else if(Input.GetActionStrength("heavy") != 0)
@@ -72,7 +71,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			player.Play("special");
-			hitbox.Disabled = false;
+			//hitbox.Disabled = true;
 			
 			_speed = 0.0f;
 			
@@ -80,14 +79,14 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		else
 		{
 			player.Play("idle");	
-			hitbox.Disabled = true;
+			//hitbox.Disabled = true;
 			_animationPlaying = false;
 
 			
 			_speed = 750.0f;
 		}
 		
-		//GetTree().ChangeSceneToPacked(packedScene);
+		
 		
 	}
 
@@ -96,7 +95,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
+		this.velocity = Velocity;
 		
 		
 		if (!IsOnFloor())
@@ -130,24 +129,17 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		_animationPlaying = false;
 	}
 
-		private void _on_area_2d_body_entered(Node2D body)
+		private void _on_special_hitbox_child_entered_tree(Node node)
 	{
-		Vector2 velocity = Velocity;
 		
-		knockback = 1.0f;
-		Sevenee.Healthbar.Health -= 5;
-		GD.Print("Entered");
-		Sevenee.velocity.X = 450.0f * knockback;
-		MoveAndCollide(velocity);
-		GD.Print("Left");
+		
+	
 	}
 
 
-	private void _on_area_2d_body_exited(Node2D body)
+	private void _on_special_hitbox_child_exiting_tree(Node node)
 	{
-		Vector2 velocity = Velocity;
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		velocity.X = Mathf.MoveToward(Velocity.X, 0, _speed);
+		
 	}
 
 
