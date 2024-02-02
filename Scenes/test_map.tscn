@@ -53,7 +53,6 @@ physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2(410.897, 576.929)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_uh02v")
 one_way_collision = true
 

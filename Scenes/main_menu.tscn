@@ -8,8 +8,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfd5r"]
 font = ExtResource("5_16rw0")
-font_size = 8
-font_color = Color(0, 1, 1, 1)
+font_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
@@ -30,10 +29,10 @@ action = "versus"
 
 [node name="Label" type="Label" parent="TouchScreenButton"]
 texture_filter = 1
-offset_left = 22.9536
-offset_top = 3.15329
-offset_right = 86.9536
-offset_bottom = 26.1533
+offset_left = 28.5127
+offset_top = 3.54745
+offset_right = 92.5127
+offset_bottom = 26.5475
 size_flags_horizontal = 4
 text = "PLAY"
 label_settings = SubResource("LabelSettings_sfd5r")
