@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://18t7dvjrrhk0"]
+[gd_scene load_steps=15 format=3 uid="uid://18t7dvjrrhk0"]
 
 [ext_resource type="Script" path="res://Scripts/Sevenee.cs" id="1_ap1xc"]
 [ext_resource type="Texture2D" uid="uid://baf36vor7dtk1" path="res://Resources/sevenee/SevenId_Ass_es.png" id="5_lqbxf"]
 [ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="8_1trn4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tkj3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ij6y"]
 size = Vector2(105, 203.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b33c8"]
@@ -96,12 +96,18 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v707b"]
+size = Vector2(105, 203.75)
+
 [node name="Sevenee" type="CharacterBody2D"]
 script = ExtResource("1_ap1xc")
 
-[node name="Hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(-423.5, 139.875)
-shape = SubResource("RectangleShape2D_3tkj3")
+[node name="HurtboxArea" type="Area2D" parent="."]
+position = Vector2(-847, 279.75)
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
+position = Vector2(422, -136.75)
+shape = SubResource("RectangleShape2D_1ij6y")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -122,3 +128,10 @@ offset_top = 33.0
 offset_right = 2285.0
 offset_bottom = 77.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-428, 144)
+shape = SubResource("RectangleShape2D_v707b")
+
+[connection signal="body_entered" from="HurtboxArea" to="." method="_on_hurtbox_area_body_entered"]
