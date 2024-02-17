@@ -7,9 +7,9 @@ namespace project_attempt.Scripts;
 public partial class PlayableCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
-	private float _speed = 450.0f;
+	protected float _speed = 450.0f;
 	public const float JumpVelocity = -400.0f;
-	private float _health = 0;
+	protected float _health = 0;
 	protected Healthbar _healthbar = null;
 	private Vector2 _velocity;
 	protected Node ParentNode;
@@ -40,6 +40,11 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		PlayCharacterAnimation();
 	}
 
+	private void Take_Damage(int damage)
+	{
+		GD.Print("taking damage");
+		_healthbar.Health -= damage;
+	}
 	protected void PlayCharacterAnimation()
 	{
 		if (_animationPlaying)
