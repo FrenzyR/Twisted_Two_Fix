@@ -15,30 +15,32 @@ public partial class Sevenee : PlayableCharacter
 		var sceneInstance = _sceneLoaderScene.Instantiate();
 		Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
 		ParentNode = GetParent();
-		_hitbox = sceneInstance.GetNode<CollisionShape2D>("Hitbox_Area/Special_Hitbox");
-		
+		/*_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
+		_special_hitbox = (CollisionShape2D)GetNode("Hitbox_Area/Special_Hitbox");*/
 		Player.FlipH = true;
+		PlayCharacterAnimation();
 	}
 
-	private void _on_hurtbox_child_entered_tree(Node2D node)
+	private void _on_animated_sprite_animation_changed()
 	{
-		GD.Print("Hello");
-		if (node.Name != "Special_Hitbox") return;
-		_healthbar.Health -= 20;
-		GD.Print("Hello again");
+		
+		_animationPlaying = true;
+		
 	}
-	
-	//deberia haber alguien por encima?
 
-	private void _on_hurtbox_child_exiting_tree(Node2D node)
+
+	private void _on_animated_sprite_animation_looped()
 	{
-		GD.Print("Hello");
-		if (node.Name != "Special_Hitbox") return;
-		_healthbar.Health -= 20;
-		GD.Print("Hello again");
+		_speed = 450.0f;
+		_animationPlaying = false;
 	}
+
 	
 }
+
+
+
+
 
 
 

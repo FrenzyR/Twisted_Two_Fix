@@ -1,7 +1,8 @@
 using Godot;
-using System;
 
-public partial class main_menu : Node2D
+namespace project_attempt.Scripts;
+
+public partial class MainMenu : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,7 +18,7 @@ public partial class main_menu : Node2D
 		var sceneInstance = sceneLoaderScene.Instantiate();
 		
 		var packedScene = new PackedScene();
-		var result = packedScene.Pack(sceneInstance);
+		packedScene.Pack(sceneInstance);
 		Node parentNode = GetParent();
 		if (Input.GetActionStrength("versus") != 0)
 		{

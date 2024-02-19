@@ -17,7 +17,9 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 	protected bool _animationPlaying = false;
 	private float _knockback = 1.0f;
 	protected AnimatedSprite2D Player;
-	protected CollisionShape2D _hitbox;
+	protected CollisionShape2D _special_hitbox;
+	protected CollisionShape2D _heavy_hitbox;
+	protected CollisionShape2D _light_hitbox;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -44,6 +46,12 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 	{
 		GD.Print("taking damage");
 		_healthbar.Health -= damage;
+		this.Player.Play("onhit");
+	}
+	
+	public void TriggerVibration()
+	{
+		Input.VibrateHandheld(1000);
 	}
 	protected void PlayCharacterAnimation()
 	{
@@ -68,7 +76,12 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			Player.Play("heavy");
-			this._healthbar.Health -= 0;
+			
+			if (Player.Animation== "heavy" && Player.Frame == 6) 
+			{
+				_heavy_hitbox.Disabled = false;	
+			}
+			
 			_speed = 0.0f;
 		}
 		else if(Input.GetActionStrength("light") != 0)
@@ -80,7 +93,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			Player.Play("special");
-			_hitbox.Disabled = false;
+			_special_hitbox.Disabled = false;
 			
 			_speed = 0.0f;
 			
@@ -88,7 +101,8 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else
 		{
 			Player.Play("idle");	
-			_hitbox.Disabled = true;
+			_special_hitbox.Disabled = true;
+			_heavy_hitbox.Disabled = true;
 			_animationPlaying = false;
 
 			

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfoib4l307vwy"
-path="res://.godot/imported/health_2.png-f3c15ed7ea2edba9909879eb846a1c90.ctex"
+uid="uid://bt6iqk1ys07aa"
+path="res://.godot/imported/SevenPunch_Ass_es.png-390b5f411a348614f9c6cbcc4598c737.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/lifebar_game/health_2.png"
-dest_files=["res://.godot/imported/health_2.png-f3c15ed7ea2edba9909879eb846a1c90.ctex"]
+source_file="res://Resources/sevenee/SevenPunch_Ass_es.png"
+dest_files=["res://.godot/imported/SevenPunch_Ass_es.png-390b5f411a348614f9c6cbcc4598c737.ctex"]
 
 [params]
 

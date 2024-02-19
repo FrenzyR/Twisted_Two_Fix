@@ -8,6 +8,7 @@ public partial class Healthbar : ProgressBar
 	private Timer _timer;
 	private ProgressBar _damageBar;
 	private float _health;
+	private PackedScene _sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/main_menu.tscn");
 	public float Health 
 	{ 
 		get => _health;
@@ -19,7 +20,11 @@ public partial class Healthbar : ProgressBar
 				
 			if(_health <= 0)
 			{
+				var sceneInstance = _sceneLoaderScene.Instantiate();
+				var packedScene = new PackedScene();
+				packedScene.Pack(sceneInstance);
 				QueueFree();
+				GetTree().ChangeSceneToPacked(packedScene);
 			}
 				
 			if(_health < previousHealth)

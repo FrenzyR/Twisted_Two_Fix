@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bl30r252lpmqk"]
 
-[ext_resource type="Texture2D" uid="uid://cschex7t0dujn" path="res://Resources/synthwave-preview-big.png" id="1_slbw3"]
+[ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://Maps and OST/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="2_4s0v2"]
 [ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
 [ext_resource type="Texture2D" uid="uid://ivykbjsswcsf" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left.png" id="4_qvpig"]
 [ext_resource type="Texture2D" uid="uid://cs6yjjdwccl3j" path="res://Resources/Controls/Directions/Double/keyboard_arrow_right_outline.png" id="5_sgxkp"]
@@ -73,11 +73,10 @@ position = Vector2(1063.86, 152.727)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uh02v")
 
-[node name="Synthwave-preview-big" type="Sprite2D" parent="."]
-position = Vector2(540, -1227)
-scale = Vector2(3.27639, 2.61875)
-texture = ExtResource("1_slbw3")
-offset = Vector2(13.582, 526.396)
+[node name="Moonlight-preview-big" type="Sprite2D" parent="."]
+position = Vector2(585.5, 145.5)
+scale = Vector2(3.27639, 2.63542)
+texture = ExtResource("2_4s0v2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(589, 222)

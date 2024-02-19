@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmrrbh7k0l6u5"
-path="res://.godot/imported/Lifebar2_Damage_animation.png-fce6245b3d367a6800e73a3480133849.ctex"
+uid="uid://bn0yos2se6xau"
+path="res://.godot/imported/TohZyOnH_ASSEST.png-e5e029ddb21ab58aeb05bf71d633f84b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/lifebar_game/Lifebar2_Damage_animation.png"
-dest_files=["res://.godot/imported/Lifebar2_Damage_animation.png-fce6245b3d367a6800e73a3480133849.ctex"]
+source_file="res://Resources/tohu/TohZyOnH_ASSEST.png"
+dest_files=["res://.godot/imported/TohZyOnH_ASSEST.png-e5e029ddb21ab58aeb05bf71d633f84b.ctex"]
 
 [params]
 

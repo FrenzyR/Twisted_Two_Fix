@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm8estmroq6rb"
-path="res://.godot/imported/lifebar2_over.png-5fe9980b99ac395d753d3f9fa793462e.ctex"
+uid="uid://6xdl2ll4y864"
+path="res://.godot/imported/TohZyRUN_ASSEST.png-c97e135f7524680a2b5ed4cb281f2e32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/lifebar_game/lifebar2_over.png"
-dest_files=["res://.godot/imported/lifebar2_over.png-5fe9980b99ac395d753d3f9fa793462e.ctex"]
+source_file="res://Resources/sevenee/TohZyRUN_ASSEST.png"
+dest_files=["res://.godot/imported/TohZyRUN_ASSEST.png-c97e135f7524680a2b5ed4cb281f2e32.ctex"]
 
 [params]
 
