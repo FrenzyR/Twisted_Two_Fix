@@ -317,7 +317,7 @@ size = Vector2(105, 203.75)
 radius = 133.135
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wd7cd"]
-radius = 93.0215
+radius = 61.2046
 
 [node name="Sevenee" type="CharacterBody2D"]
 script = ExtResource("1_ap1xc")
@@ -374,7 +374,7 @@ collision_mask = 2
 script = ExtResource("9_yfelv")
 
 [node name="Heavy_Hitbox" type="CollisionShape2D" parent="Heavy_HitboxArea"]
-position = Vector2(-580, 137)
+position = Vector2(-556, 153)
 shape = SubResource("CircleShape2D_wd7cd")
 disabled = true
 
