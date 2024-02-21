@@ -9,7 +9,6 @@ public partial class Tohu : PlayableCharacter
 	public override void _Process(double delta)
 	{
 		Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
-		ParentNode = GetParent();
 		_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
 		_special_hitbox = (CollisionShape2D)GetNode("Special_HitboxArea/Special_Hitbox");
 		PlayCharacterAnimation();
