@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjq0kh4mivhni"
-path="res://.godot/imported/FrenBW_Ass_Ets.png-20ae74ccaf86f9f41ce0d066ff6c0cef.ctex"
+uid="uid://df1y2xmh7n73w"
+path="res://.godot/imported/SevenOnHit_Ass_es.png-11df6c99131014b9240bb98ec9f4fd85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/tohu/FrenBW_Ass_Ets.png"
-dest_files=["res://.godot/imported/FrenBW_Ass_Ets.png-20ae74ccaf86f9f41ce0d066ff6c0cef.ctex"]
+source_file="res://Resources/sevenee/SevenOnHit_Ass_es.png"
+dest_files=["res://.godot/imported/SevenOnHit_Ass_es.png-11df6c99131014b9240bb98ec9f4fd85.ctex"]
 
 [params]
 

@@ -11,16 +11,11 @@ public partial class Tohu : PlayableCharacter
 		Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
 		ParentNode = GetParent();
 		_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
-		_special_hitbox = (CollisionShape2D)GetNode("Hitbox_Area/Special_Hitbox");
+		_special_hitbox = (CollisionShape2D)GetNode("Special_HitboxArea/Special_Hitbox");
 		PlayCharacterAnimation();
 	}
 
 	
-	private void _on_area_2d_body_entered(Node2D body)
-	{
-		_healthbar.Health -= 20;
-	}
-
 	private void _on_animated_sprite_animation_changed()
 	{
 		

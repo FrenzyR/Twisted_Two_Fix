@@ -76,11 +76,8 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			Player.Play("heavy");
+			_heavy_hitbox.Disabled = false;	
 			
-			if (Player.Animation== "heavy" && Player.Frame == 6) 
-			{
-				_heavy_hitbox.Disabled = false;	
-			}
 			
 			_speed = 0.0f;
 		}

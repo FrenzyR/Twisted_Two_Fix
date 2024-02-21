@@ -15,8 +15,8 @@ public partial class Sevenee : PlayableCharacter
 		var sceneInstance = _sceneLoaderScene.Instantiate();
 		Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
 		ParentNode = GetParent();
-		/*_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
-		_special_hitbox = (CollisionShape2D)GetNode("Hitbox_Area/Special_Hitbox");*/
+		_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
+		_special_hitbox = (CollisionShape2D)GetNode("Special_HitboxArea/Special_Hitbox");
 		Player.FlipH = true;
 		PlayCharacterAnimation();
 	}

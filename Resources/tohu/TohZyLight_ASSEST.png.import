@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db3mmr2xglrfb"
-path="res://.godot/imported/FranzySpec_Ass_ets.png-03366afc02923a371ab3e009f4565d85.ctex"
+uid="uid://dbr23c1tqc5dn"
+path="res://.godot/imported/TohZyLight_ASSEST.png-222e8f967a06be3e44de0fb2afc9abfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/tohu/FranzySpec_Ass_ets.png"
-dest_files=["res://.godot/imported/FranzySpec_Ass_ets.png-03366afc02923a371ab3e009f4565d85.ctex"]
+source_file="res://Resources/tohu/TohZyLight_ASSEST.png"
+dest_files=["res://.godot/imported/TohZyLight_ASSEST.png-222e8f967a06be3e44de0fb2afc9abfb.ctex"]
 
 [params]
 
