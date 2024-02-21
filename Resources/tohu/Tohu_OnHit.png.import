@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo65qwfbbvhwp"
-path="res://.godot/imported/TohZyWalkback_ASSEST.png-e8be556a39c53c81d061a1b773af0e29.ctex"
+uid="uid://bn0yos2se6xau"
+path="res://.godot/imported/Tohu_OnHit.png-e2ba18c5b846f806e45ba54ddb8a36bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/tohu/TohZyWalkback_ASSEST.png"
-dest_files=["res://.godot/imported/TohZyWalkback_ASSEST.png-e8be556a39c53c81d061a1b773af0e29.ctex"]
+source_file="res://Resources/tohu/Tohu_OnHit.png"
+dest_files=["res://.godot/imported/Tohu_OnHit.png-e2ba18c5b846f806e45ba54ddb8a36bc.ctex"]
 
 [params]
 

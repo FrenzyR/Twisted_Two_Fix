@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn34pk2lbttmj"
-path="res://.godot/imported/FranzyBlo_Ass_ets.png-10ee68f321cd877f84dc588c62f8befd.ctex"
+uid="uid://baopyuqaxhjcv"
+path="res://.godot/imported/Tohu_Special.png-c8e4fbf0adf6322cbbb89d1b6805b653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/FranzyBlo_Ass_ets.png"
-dest_files=["res://.godot/imported/FranzyBlo_Ass_ets.png-10ee68f321cd877f84dc588c62f8befd.ctex"]
+source_file="res://Resources/tohu/Tohu_Special.png"
+dest_files=["res://.godot/imported/Tohu_Special.png-c8e4fbf0adf6322cbbb89d1b6805b653.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k77g7u7eqxec"
-path="res://.godot/imported/Screenhud1.png-646040f4d60848b99727e9fc40a298d7.ctex"
+uid="uid://cw2xws5o2koi7"
+path="res://.godot/imported/Nee_Backward.png-f145a54f7ea0444f87e3d9b1c9cbbf95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screenhud1.png"
-dest_files=["res://.godot/imported/Screenhud1.png-646040f4d60848b99727e9fc40a298d7.ctex"]
+source_file="res://Resources/sevenee/Nee_Backward.png"
+dest_files=["res://.godot/imported/Nee_Backward.png-f145a54f7ea0444f87e3d9b1c9cbbf95.ctex"]
 
 [params]
 

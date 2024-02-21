@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck3ue2l6q5ph1"
-path="res://.godot/imported/health.png-6434dbfbfdbe010807c52194fdafb22e.ctex"
+uid="uid://bt6iqk1ys07aa"
+path="res://.godot/imported/Nee_Light.png-fb27f87fd8bed0e3707e40b1c0f84d1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/lifebar_game/health.png"
-dest_files=["res://.godot/imported/health.png-6434dbfbfdbe010807c52194fdafb22e.ctex"]
+source_file="res://Resources/sevenee/Nee_Light.png"
+dest_files=["res://.godot/imported/Nee_Light.png-fb27f87fd8bed0e3707e40b1c0f84d1d.ctex"]
 
 [params]
 

@@ -44,31 +44,31 @@ size = Vector2(1637.83, 132.808)
 position = Vector2(584, 312)
 script = SubResource("CSharpScript_507wq")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="MapPhysics" type="Node2D" parent="."]
 position = Vector2(-1, 18.5)
 scale = Vector2(1.61111, 1.39792)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPhysics"]
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D"]
 position = Vector2(410.897, 576.929)
 shape = SubResource("RectangleShape2D_uh02v")
 one_way_collision = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPhysics/StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D/StaticBody2D"]
 position = Vector2(-368.69, 168.465)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uh02v")
 one_way_collision = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/StaticBody2D/StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPhysics/StaticBody2D/StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D/StaticBody2D/StaticBody2D"]
 position = Vector2(1063.86, 152.727)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uh02v")
@@ -86,44 +86,48 @@ scale = Vector2(1.125, 1.05455)
 position = Vector2(1164, 123)
 scale = Vector2(2, 2)
 
-[node name="Backward" type="TouchScreenButton" parent="."]
+[node name="Sevenee" parent="." instance=ExtResource("13_a4jal")]
+position = Vector2(1941, 143)
+scale = Vector2(2, 2)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(-1, 18.5)
+scale = Vector2(1.61111, 1.39792)
+
+[node name="Backward" type="TouchScreenButton" parent="Buttons"]
 texture_filter = 1
-position = Vector2(-562, 347)
-scale = Vector2(2.03125, 1.84375)
+position = Vector2(-348.207, 234.992)
+scale = Vector2(1.26078, 1.31892)
 texture_normal = ExtResource("3_xgxoe")
 texture_pressed = ExtResource("4_qvpig")
 action = "ui_left"
 
-[node name="Forward" type="TouchScreenButton" parent="Backward"]
+[node name="Forward" type="TouchScreenButton" parent="Buttons"]
 texture_filter = 1
-position = Vector2(138.338, 62.3729)
-scale = Vector2(1.18462, 1.22881)
+position = Vector2(-173.794, 317.257)
+scale = Vector2(1.49354, 1.62071)
 texture_normal = ExtResource("5_sgxkp")
 texture_pressed = ExtResource("6_cruwt")
 action = "ui_right"
 
-[node name="Heavy" type="TouchScreenButton" parent="Backward"]
-position = Vector2(938.831, -17.8983)
-scale = Vector2(0.846154, 0.957624)
+[node name="Heavy" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(835.449, 211.385)
+scale = Vector2(1.06681, 1.26303)
 texture_normal = ExtResource("7_464ue")
 texture_pressed = ExtResource("8_gwgd4")
 action = "heavy"
 
-[node name="Special" type="TouchScreenButton" parent="Backward"]
-position = Vector2(1033.35, 1.62711)
-scale = Vector2(0.846154, 0.957624)
+[node name="Special" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(954.616, 237.138)
+scale = Vector2(1.06681, 1.26303)
 texture_normal = ExtResource("9_6aych")
 texture_pressed = ExtResource("10_pwcer")
 action = "special"
 
-[node name="Light" type="TouchScreenButton" parent="Backward"]
+[node name="Light" type="TouchScreenButton" parent="Buttons"]
 texture_filter = 1
-position = Vector2(938.831, 84.6102)
-scale = Vector2(0.846154, 0.957624)
+position = Vector2(835.449, 346.586)
+scale = Vector2(1.06681, 1.26303)
 texture_normal = ExtResource("7_gp5pu")
 texture_pressed = ExtResource("12_woeru")
 action = "light"
-
-[node name="Sevenee" parent="." instance=ExtResource("13_a4jal")]
-position = Vector2(1659, 83)
-scale = Vector2(2, 2)

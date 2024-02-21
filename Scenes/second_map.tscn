@@ -1,13 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://ls2mv22tjvcd"]
 
 [ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://Maps and OST/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="1_bcupq"]
-[ext_resource type="Texture2D" uid="uid://k77g7u7eqxec" path="res://Screenhud1.png" id="2_cu3s6"]
 [ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_d880v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8m54q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85xuj"]
 size = Vector2(1445.86, 29.5502)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yhfgl"]
+load_path = "res://.godot/imported/Screenhud1.png-646040f4d60848b99727e9fc40a298d7.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3kab"]
 load_path = "res://.godot/imported/T_P5_Triangle_Alt.png-1ee121c25bd0954fd58234cd151d031b.ctex"
@@ -68,7 +70,7 @@ scale = Vector2(1.125, 1.05455)
 texture_filter = 1
 position = Vector2(-84.2498, -233)
 scale = Vector2(5.30172, 2.8)
-texture = ExtResource("2_cu3s6")
+texture = SubResource("CompressedTexture2D_yhfgl")
 
 [node name="Backward" type="TouchScreenButton" parent="."]
 position = Vector2(-587, 577)

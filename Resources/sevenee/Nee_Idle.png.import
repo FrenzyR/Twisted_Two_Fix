@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1pyclgxdr2iq"
-path="res://.godot/imported/Sevenwalkfront_Ass_es.png-c392161af4e4367bf563f20866f486c6.ctex"
+uid="uid://baf36vor7dtk1"
+path="res://.godot/imported/Nee_Idle.png-406233431d123625b4323ee35d7ec2a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/sevenee/Sevenwalkfront_Ass_es.png"
-dest_files=["res://.godot/imported/Sevenwalkfront_Ass_es.png-c392161af4e4367bf563f20866f486c6.ctex"]
+source_file="res://Resources/sevenee/Nee_Idle.png"
+dest_files=["res://.godot/imported/Nee_Idle.png-406233431d123625b4323ee35d7ec2a4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baf36vor7dtk1"
-path="res://.godot/imported/SevenId_Ass_es.png-eb88d00d334c11295d2a9b866fdaf1f9.ctex"
+uid="uid://df1y2xmh7n73w"
+path="res://.godot/imported/Nee_OnHit.png-2c09f64b6f9e46a243b217596a65fb8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/sevenee/SevenId_Ass_es.png"
-dest_files=["res://.godot/imported/SevenId_Ass_es.png-eb88d00d334c11295d2a9b866fdaf1f9.ctex"]
+source_file="res://Resources/sevenee/Nee_OnHit.png"
+dest_files=["res://.godot/imported/Nee_OnHit.png-2c09f64b6f9e46a243b217596a65fb8e.ctex"]
 
 [params]
 

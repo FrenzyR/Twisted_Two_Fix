@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbr23c1tqc5dn"
-path="res://.godot/imported/TohZyLight_ASSEST.png-222e8f967a06be3e44de0fb2afc9abfb.ctex"
+uid="uid://bvpqgw34tjlui"
+path="res://.godot/imported/Tohu_Idle.png-936fe79d62af83d10f66a3b8264f6a6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/tohu/TohZyLight_ASSEST.png"
-dest_files=["res://.godot/imported/TohZyLight_ASSEST.png-222e8f967a06be3e44de0fb2afc9abfb.ctex"]
+source_file="res://Resources/tohu/Tohu_Idle.png"
+dest_files=["res://.godot/imported/Tohu_Idle.png-936fe79d62af83d10f66a3b8264f6a6d.ctex"]
 
 [params]
 
