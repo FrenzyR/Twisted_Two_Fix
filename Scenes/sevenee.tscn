@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://dgrngtlhbteof"]
+[gd_scene load_steps=53 format=3 uid="uid://dgrngtlhbteof"]
 
-[ext_resource type="Script" path="res://Scripts/Sevenee.cs" id="1_ap1xc"]
+[ext_resource type="Script" path="res://Scripts/EnemyCharacter.cs" id="1_1a2sc"]
 [ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="2_cecwh"]
 [ext_resource type="Texture2D" uid="uid://cw2xws5o2koi7" path="res://Resources/sevenee/Nee_Backward.png" id="3_h6bgd"]
 [ext_resource type="Texture2D" uid="uid://baf36vor7dtk1" path="res://Resources/sevenee/Nee_Idle.png" id="4_gpbqa"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b1pyclgxdr2iq" path="res://Resources/sevenee/Nee_Run.png" id="7_4d2n7"]
 [ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="8_1trn4"]
 [ext_resource type="Script" path="res://Scripts/MyHitbox.cs" id="9_yfelv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08iyi"]
+size = Vector2(354, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ij6y"]
 size = Vector2(105, 203.75)
@@ -320,7 +323,16 @@ radius = 133.135
 radius = 61.2046
 
 [node name="Sevenee" type="CharacterBody2D"]
-script = ExtResource("1_ap1xc")
+script = ExtResource("1_1a2sc")
+
+[node name="AreaDetection" type="Area2D" parent="."]
+position = Vector2(1688, 33)
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
+position = Vector2(-2336, 111)
+shape = SubResource("RectangleShape2D_08iyi")
 
 [node name="HurtboxArea" type="Area2D" parent="."]
 position = Vector2(-847, 279.75)
@@ -378,6 +390,7 @@ position = Vector2(-556, 153)
 shape = SubResource("CircleShape2D_wd7cd")
 disabled = true
 
+[connection signal="area_entered" from="AreaDetection" to="." method="_on_area_detection_area_entered"]
 [connection signal="child_entered_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_entered_tree"]
 [connection signal="child_exiting_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_exiting_tree"]
 [connection signal="animation_changed" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_changed"]

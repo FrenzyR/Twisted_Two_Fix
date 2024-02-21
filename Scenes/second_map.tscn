@@ -9,7 +9,6 @@
 size = Vector2(1445.86, 29.5502)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yhfgl"]
-load_path = "res://.godot/imported/Screenhud1.png-646040f4d60848b99727e9fc40a298d7.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3kab"]
 load_path = "res://.godot/imported/T_P5_Triangle_Alt.png-1ee121c25bd0954fd58234cd151d031b.ctex"

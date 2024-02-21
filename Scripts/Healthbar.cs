@@ -42,7 +42,7 @@ public partial class Healthbar : ProgressBar
 	public override void _Ready()
 	{
 		
-		this._timer = GetNode<Timer>("HealthbarTimer");
+		this._timer = (Timer)GetNode("HealthbarTimer");
 		this._damageBar = GetNode<ProgressBar>("DamageBar");
 	}
 

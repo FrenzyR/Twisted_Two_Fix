@@ -9,11 +9,10 @@ public partial class Sevenee : PlayableCharacter
 
 	public override void _Process(double delta)
 	{
-		_speed = 350.0f;
 		Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
 		_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
 		_special_hitbox = (CollisionShape2D)GetNode("Special_HitboxArea/Special_Hitbox");
-		Player.FlipH = true;
+		
 		PlayCharacterAnimation();
 	}
 
