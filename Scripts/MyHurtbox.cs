@@ -22,6 +22,16 @@ public partial class MyHurtbox : Area2D
 			return;
 		}
 
+		hitbox.Damage = 30;
+		if (hitbox.Name == "Light_HitboxArea")
+		{
+			hitbox.Damage = 3;
+		}
+		else if (hitbox.Name == "Heavy_HitboxArea")
+		{
+			hitbox.Damage = 20;
+		}
+		
 		if (Owner.HasMethod("Take_Damage"))
 		{
 			Owner.Call("Take_Damage", hitbox.Damage);

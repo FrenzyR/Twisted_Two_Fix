@@ -8,26 +8,26 @@ public partial class Tohu : PlayableCharacter
 
 	public override void _Process(double delta)
 	{
-		Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
+		Player = GetNode<AnimationPlayer>("AnimationPlayer");
+		Player.SpeedScale = 2;
 		_heavy_hitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
 		_special_hitbox = (CollisionShape2D)GetNode("Special_HitboxArea/Special_Hitbox");
+		_light_hitbox = (CollisionShape2D)GetNode("Light_HitboxArea/Light_Hitbox");
 		PlayCharacterAnimation();
-	}
-
-	
-	private void _on_animated_sprite_animation_changed()
-	{
-		
-		_animationPlaying = true;
 		
 	}
 
-
-	private void _on_animated_sprite_animation_looped()
+	private void _on_animation_player_animation_finished(string anim)
 	{
-		_speed = 450.0f;
+		Player.SpeedScale = 2;
+		_speed = 650f;
+		Player.Play("idle");
+		_special_hitbox.Disabled = true;
+		_heavy_hitbox.Disabled = true;
+		_light_hitbox.Disabled = true;
 		_animationPlaying = false;
 	}
+	
 
 
 }

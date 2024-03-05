@@ -7,7 +7,7 @@ namespace project_attempt.Scripts;
 public partial class PlayableCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
-	protected float _speed = 450.0f;
+	protected float _speed = 650.0f;
 	public const float JumpVelocity = -400.0f;
 	protected float _health = 0;
 	protected Healthbar _healthbar = null;
@@ -16,7 +16,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 	private AnimationPlayer _animPlayer = new AnimationPlayer();
 	protected bool _animationPlaying = false;
 	private float _knockback = 1.0f;
-	protected AnimatedSprite2D Player;
+	protected AnimationPlayer Player;
 	protected CollisionShape2D _special_hitbox;
 	protected CollisionShape2D _heavy_hitbox;
 	protected CollisionShape2D _light_hitbox;
@@ -36,7 +36,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 
 	public override void _Process(double delta)
 	{
-		this.Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
+		this.Player = GetNode<AnimationPlayer>("AnimationPlayer");
 		
 		
 		PlayCharacterAnimation();
@@ -46,7 +46,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 	{
 		GD.Print("taking damage");
 		_healthbar.Health -= damage;
-		this.Player.Play("onhit");
+		Player.Play("onhit");
 	}
 	
 	public void TriggerVibration()
@@ -62,6 +62,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 
 		if (Input.GetActionStrength("ui_right") != 0)
 		{
+			Player.SpeedScale = 4;
 			Player.Play("run");
 			
 			_animationPlaying = false;
@@ -69,6 +70,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		}
 		else if(Input.GetActionStrength("ui_left") != 0)
 		{
+			Player.SpeedScale = 4;
 			Player.Play("backward");
 			
 			_animationPlaying = false;
@@ -76,13 +78,13 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			Player.Play("heavy");
-			_heavy_hitbox.Disabled = false;	
 			
 			
 			_speed = 0.0f;
 		}
 		else if(Input.GetActionStrength("light") != 0)
 		{
+			Player.SpeedScale = 4;	
 			Player.Play("light");
 			_speed = 0.0f;
 		}
@@ -90,23 +92,30 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			Player.Play("special");
-			_special_hitbox.Disabled = false;
 			
 			_speed = 0.0f;
 			
 		}
-		else
-		{
-			Player.Play("idle");	
-			_special_hitbox.Disabled = true;
-			_heavy_hitbox.Disabled = true;
-			_animationPlaying = false;
-
-			
-			
-		}
+		
 	}
 
+	public void turnSpecialHitboxOn()
+	{
+			_special_hitbox.Disabled = false;
+	
+	}
+
+	public void turnLightHitboxOn()
+	{
+		_light_hitbox.Disabled = false;
+	
+	}
+
+	public void turnHeavyHitboxOn()
+	{
+		_heavy_hitbox.Disabled = false;
+	
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

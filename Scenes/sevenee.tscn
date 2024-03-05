@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dgrngtlhbteof"]
+[gd_scene load_steps=29 format=3 uid="uid://dgrngtlhbteof"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyCharacter.cs" id="1_1a2sc"]
 [ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="2_cecwh"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b1pyclgxdr2iq" path="res://Resources/sevenee/Nee_Run.png" id="7_4d2n7"]
 [ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="8_1trn4"]
 [ext_resource type="Script" path="res://Scripts/MyHitbox.cs" id="9_yfelv"]
+[ext_resource type="Texture2D" uid="uid://dcv1s4636hqtv" path="res://Resources/sevenee/Nee_Block.png" id="10_cpgvw"]
+[ext_resource type="Texture2D" uid="uid://gcsnv7mf0s6p" path="res://Resources/sevenee/Nee_Special.png" id="11_ahhcv"]
+[ext_resource type="Texture2D" uid="uid://d4bixrop11a3i" path="res://Resources/sevenee/Nee_Heavy.png" id="12_s8fr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08iyi"]
 size = Vector2(176, 17)
@@ -16,313 +19,15 @@ size = Vector2(176, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ij6y"]
 size = Vector2(105, 203.75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qese5"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(0, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7pd2"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(300, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yyxg"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(600, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cons"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(900, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ty175"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(1200, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwxtl"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(1500, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5apbu"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(1800, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u203k"]
-atlas = ExtResource("3_h6bgd")
-region = Rect2(2100, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b33c8"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(0, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mt6ce"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(300, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8m6kg"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(600, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jiyu"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(900, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r61cs"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(1200, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1lbx"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(1500, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eakmk"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(1800, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6eqb"]
-atlas = ExtResource("4_gpbqa")
-region = Rect2(2100, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqvfq"]
-atlas = ExtResource("5_v378o")
-region = Rect2(0, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwn5v"]
-atlas = ExtResource("5_v378o")
-region = Rect2(300, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0e8b"]
-atlas = ExtResource("5_v378o")
-region = Rect2(600, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r30ai"]
-atlas = ExtResource("5_v378o")
-region = Rect2(900, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lq3wn"]
-atlas = ExtResource("5_v378o")
-region = Rect2(1200, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5txc3"]
-atlas = ExtResource("5_v378o")
-region = Rect2(1500, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eushp"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(0, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4cuf"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(300, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_on0ny"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(600, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3666h"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(900, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ke1hn"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(1200, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gd6co"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(1500, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fq6cn"]
-atlas = ExtResource("6_eq1h1")
-region = Rect2(1800, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pgh60"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(0, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_06s28"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(300, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yorcj"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(600, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmilq"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(900, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d72qg"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(1200, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mu2lm"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(1500, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4pak1"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(1800, 0, 300, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yiv4m"]
-atlas = ExtResource("7_4d2n7")
-region = Rect2(2100, 0, 300, 300)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gntan"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qese5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f7pd2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2yyxg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3cons")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ty175")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kwxtl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5apbu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u203k")
-}],
-"loop": true,
-"name": &"backward",
-"speed": 20.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"block",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"heavy",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b33c8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mt6ce")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m6kg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4jiyu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r61cs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u1lbx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eakmk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s6eqb")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vqvfq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qwn5v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t0e8b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r30ai")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lq3wn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5txc3")
-}],
-"loop": true,
-"name": &"light",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eushp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m4cuf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_on0ny")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3666h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ke1hn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gd6co")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fq6cn")
-}],
-"loop": true,
-"name": &"onhit",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pgh60")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06s28")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yorcj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmilq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d72qg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mu2lm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4pak1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yiv4m")
-}],
-"loop": true,
-"name": &"run",
-"speed": 20.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"special",
-"speed": 20.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v707b"]
 size = Vector2(105, 203.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gch08"]
-radius = 133.135
+radius = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xadgi"]
+radius = 32.0
+height = 78.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wd7cd"]
 radius = 61.2046
@@ -332,31 +37,31 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Nee_Animations/Idle:frame_coords")
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(0, 0)]
+"values": [10]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Nee_Animations/Light:frame")
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Nee_Animations/Backward:frame")
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -368,97 +73,448 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Nee_Animations/OnHit:frame")
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [ExtResource("4_gpbqa")]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Nee_Animations/Run:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+
+[sub_resource type="Animation" id="Animation_komqk"]
+resource_name = "backward"
+length = 0.95
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [ExtResource("3_h6bgd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7425, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 7, 7]
+}
+
+[sub_resource type="Animation" id="Animation_gfv08"]
+resource_name = "block"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_cpgvw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9]
+}
+
+[sub_resource type="Animation" id="Animation_ycjtv"]
+resource_name = "heavy"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_s8fr1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 13, 13, 13, 13]
 }
 
 [sub_resource type="Animation" id="Animation_rsnws"]
 resource_name = "idle"
-length = 0.8
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("Nee_Animations/Idle:frame_coords")
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(6, 0)]
+"values": [ExtResource("4_gpbqa")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Nee_Animations/Light:frame")
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 9]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("Nee_Animations/Backward:frame")
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8),
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+
+[sub_resource type="Animation" id="Animation_8blji"]
+resource_name = "light"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_v378o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/path = NodePath("Nee_Animations/OnHit:frame")
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 6, 6, 6]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Nee_Animations/Run:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+
+[sub_resource type="Animation" id="Animation_wwdkw"]
+resource_name = "onhit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7]
+"values": [ExtResource("6_eq1h1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6]
+}
+
+[sub_resource type="Animation" id="Animation_qx1ot"]
+resource_name = "run"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_4d2n7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_36pdm"]
+resource_name = "special"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nee_Animations/Sevenee_Animations:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_ahhcv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nee_Animations/Sevenee_Animations:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nee_Animations/Sevenee_Animations:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nee_Animations/Sevenee_Animations:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19, 19, 19, 19, 19, 19]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ko7kk"]
 _data = {
 "RESET": SubResource("Animation_dls5j"),
-"idle": SubResource("Animation_rsnws")
+"backward": SubResource("Animation_komqk"),
+"block": SubResource("Animation_gfv08"),
+"heavy": SubResource("Animation_ycjtv"),
+"idle": SubResource("Animation_rsnws"),
+"light": SubResource("Animation_8blji"),
+"onhit": SubResource("Animation_wwdkw"),
+"run": SubResource("Animation_qx1ot"),
+"special": SubResource("Animation_36pdm")
 }
 
 [node name="Sevenee" type="CharacterBody2D"]
@@ -484,15 +540,6 @@ shape = SubResource("RectangleShape2D_1ij6y")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-421, 90)
-scale = Vector2(1.86043, 1.7537)
-sprite_frames = SubResource("SpriteFrames_gntan")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.736567
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Healthbar" parent="CanvasLayer" instance=ExtResource("8_1trn4")]
@@ -514,8 +561,19 @@ collision_mask = 2
 script = ExtResource("9_yfelv")
 
 [node name="Special_Hitbox" type="CollisionShape2D" parent="Special_HitboxArea"]
-position = Vector2(-380, 20)
+position = Vector2(-351, 19)
 shape = SubResource("CircleShape2D_gch08")
+disabled = true
+
+[node name="Light_HitboxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("9_yfelv")
+
+[node name="Light_Hitbox" type="CollisionShape2D" parent="Light_HitboxArea"]
+position = Vector2(-525, 103)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xadgi")
 disabled = true
 
 [node name="Heavy_HitboxArea" type="Area2D" parent="."]
@@ -524,47 +582,19 @@ collision_mask = 2
 script = ExtResource("9_yfelv")
 
 [node name="Heavy_Hitbox" type="CollisionShape2D" parent="Heavy_HitboxArea"]
-position = Vector2(-556, 153)
+position = Vector2(-560, 137)
 shape = SubResource("CircleShape2D_wd7cd")
 disabled = true
 
 [node name="Nee_Animations" type="Node2D" parent="."]
-visible = false
-position = Vector2(-988, -6)
+position = Vector2(-1127, -1)
+scale = Vector2(-1, 1)
 
-[node name="Idle" type="Sprite2D" parent="Nee_Animations"]
-visible = false
-position = Vector2(703.855, 84.5)
-scale = Vector2(1.85582, 1.803)
+[node name="Sevenee_Animations" type="Sprite2D" parent="Nee_Animations"]
+position = Vector2(-707, 64)
+scale = Vector2(1.9, 2)
 texture = ExtResource("4_gpbqa")
 hframes = 10
-
-[node name="Light" type="Sprite2D" parent="Nee_Animations"]
-visible = false
-position = Vector2(705, 78)
-scale = Vector2(1.95185, 1.91667)
-texture = ExtResource("5_v378o")
-hframes = 9
-
-[node name="Backward" type="Sprite2D" parent="Nee_Animations"]
-visible = false
-position = Vector2(705, 75)
-scale = Vector2(1.952, 1.952)
-texture = ExtResource("3_h6bgd")
-hframes = 8
-
-[node name="OnHit" type="Sprite2D" parent="Nee_Animations"]
-visible = false
-position = Vector2(705, 79)
-scale = Vector2(1.9, 1.9)
-texture = ExtResource("6_eq1h1")
-hframes = 7
-
-[node name="Run" type="Sprite2D" parent="Nee_Animations"]
-position = Vector2(705, 80)
-scale = Vector2(1.9, 1.9)
-texture = ExtResource("7_4d2n7")
-hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -576,5 +606,3 @@ autoplay = "idle"
 [connection signal="area_exited" from="AreaDetection" to="." method="_on_area_detection_area_exited"]
 [connection signal="child_entered_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_entered_tree"]
 [connection signal="child_exiting_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_exiting_tree"]
-[connection signal="animation_changed" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_changed"]
-[connection signal="animation_looped" from="AnimatedSprite" to="." method="_on_animated_sprite_animation_looped"]

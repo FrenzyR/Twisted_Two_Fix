@@ -16,7 +16,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 	private AnimationPlayer _animPlayer = new AnimationPlayer();
 	protected bool _animationPlaying = false;
 	private float _knockback = 1.0f;
-	protected AnimatedSprite2D Player;
+	protected AnimationPlayer Player;
 	protected CollisionShape2D _special_hitbox;
 	protected CollisionShape2D _heavy_hitbox;
 	protected CollisionShape2D _light_hitbox;
@@ -36,8 +36,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 	
 	public override void _Process(double delta)
 	{
-		this.Player = GetNode<AnimatedSprite2D>("AnimatedSprite");
-		Player.FlipH = true;
+		this.Player = GetNode<AnimationPlayer>("AnimationPlayer");
 		
 		PlayCharacterAnimation();
 	}

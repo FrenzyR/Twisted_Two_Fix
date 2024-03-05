@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx45s1gvxlgo7"
-path="res://.godot/imported/TohZyWalkback_ASSEST.png-4c0fdb7286ec44b0b0267d45b26ae213.ctex"
+uid="uid://dcv1s4636hqtv"
+path="res://.godot/imported/Nee_Block.png-14e450e6643f25828f25099c37ece7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/HisSprites/TohZyWalkback_ASSEST.png"
-dest_files=["res://.godot/imported/TohZyWalkback_ASSEST.png-4c0fdb7286ec44b0b0267d45b26ae213.ctex"]
+source_file="res://Resources/sevenee/Nee_Block.png"
+dest_files=["res://.godot/imported/Nee_Block.png-14e450e6643f25828f25099c37ece7d7.ctex"]
 
 [params]
 
