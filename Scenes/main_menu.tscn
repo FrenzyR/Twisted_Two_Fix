@@ -1,38 +1,53 @@
 [gd_scene load_steps=7 format=3 uid="uid://co8s56nvjh071"]
 
-[ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://Maps and OST/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_c21mb"]
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_yqcbg"]
-[ext_resource type="Texture2D" uid="uid://yalc7ktbsd3h" path="res://Maps and OST/night cities files/backgrounds/moonlight/menu_button01_UNPRESSED.png" id="3_7gxj4"]
-[ext_resource type="Texture2D" uid="uid://buk47q6a07qpv" path="res://Maps and OST/night cities files/backgrounds/moonlight/menu_button01_PRESSED.png" id="4_k12f5"]
-[ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="5_16rw0"]
+[ext_resource type="Texture2D" uid="uid://cg3uu4qede48c" path="res://Resources/HisSprites/1.png" id="5_2lia0"]
+[ext_resource type="Texture2D" uid="uid://rs27nymj3w54" path="res://Resources/HisSprites/3.png" id="5_18xw7"]
+[ext_resource type="Texture2D" uid="uid://bfn5oup6e3c2c" path="res://Resources/HisSprites/2.png" id="6_lrbhe"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_sfd5r"]
-font = ExtResource("5_16rw0")
-font_size = 5
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2d1ir"]
+radius = 0.01
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t1gos"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_yqcbg")
 
-[node name="Neon-preiview-big" type="Sprite2D" parent="."]
-position = Vector2(1155.5, 549)
-scale = Vector2(2.07726, 2.3375)
-texture = ExtResource("1_c21mb")
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(1181, 543)
+scale = Vector2(1.49, 1.21778)
+texture = ExtResource("5_2lia0")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="2" type="Sprite2D" parent="MenuBackground"]
+position = Vector2(-4.02692, -60.7664)
+scale = Vector2(0.991611, 1.12409)
+texture = ExtResource("6_lrbhe")
+
+[node name="3" type="Sprite2D" parent="MenuBackground"]
+position = Vector2(-26.8457, 59.1241)
+scale = Vector2(0.671141, 0.821168)
+texture = ExtResource("5_18xw7")
+
+[node name="SettingsButton" type="TouchScreenButton" parent="."]
 texture_filter = 1
-position = Vector2(1561, 348)
-scale = Vector2(5.57647, 7.61111)
-texture_normal = ExtResource("3_7gxj4")
-texture_pressed = ExtResource("4_k12f5")
+position = Vector2(1137, 632)
+rotation = -3.14159
+scale = Vector2(15000, 15000)
+shape = SubResource("CircleShape2D_2d1ir")
+action = "settings"
+
+[node name="VersusButton" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(1151, 238)
+rotation = 1.5708
+scale = Vector2(21.978, 30)
+shape = SubResource("CapsuleShape2D_t1gos")
 action = "versus"
 
-[node name="Label" type="Label" parent="TouchScreenButton"]
+[node name="CreditsButton" type="TouchScreenButton" parent="."]
 texture_filter = 1
-offset_left = 28.5127
-offset_top = 3.54745
-offset_right = 92.5127
-offset_bottom = 26.5475
-size_flags_horizontal = 4
-text = "PLAY"
-label_settings = SubResource("LabelSettings_sfd5r")
+position = Vector2(1138, 1027)
+rotation = 1.5708
+scale = Vector2(21.978, 30)
+shape = SubResource("CapsuleShape2D_t1gos")
+action = "credits"

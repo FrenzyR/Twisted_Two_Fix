@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bl30r252lpmqk"]
 
-[ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://Maps and OST/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="2_4s0v2"]
+[ext_resource type="Texture2D" uid="uid://bqxio3m257vd" path="res://Resources/HisSprites/sky-lines.png" id="1_a5wmb"]
 [ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="3_xgxoe"]
 [ext_resource type="Texture2D" uid="uid://ivykbjsswcsf" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left.png" id="4_qvpig"]
 [ext_resource type="Texture2D" uid="uid://cs6yjjdwccl3j" path="res://Resources/Controls/Directions/Double/keyboard_arrow_right_outline.png" id="5_sgxkp"]
@@ -44,6 +44,11 @@ size = Vector2(1637.83, 132.808)
 position = Vector2(584, 312)
 script = SubResource("CSharpScript_507wq")
 
+[node name="Sky-lines" type="Sprite2D" parent="."]
+position = Vector2(586, 225)
+scale = Vector2(2.91667, 2.3375)
+texture = ExtResource("1_a5wmb")
+
 [node name="MapPhysics" type="Node2D" parent="."]
 position = Vector2(-1, 18.5)
 scale = Vector2(1.61111, 1.39792)
@@ -52,7 +57,7 @@ scale = Vector2(1.61111, 1.39792)
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D"]
-position = Vector2(410.897, 576.929)
+position = Vector2(417.104, 462.473)
 shape = SubResource("RectangleShape2D_uh02v")
 one_way_collision = true
 
@@ -60,7 +65,7 @@ one_way_collision = true
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D/StaticBody2D"]
-position = Vector2(-368.69, 168.465)
+position = Vector2(-271.242, 174.903)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uh02v")
 one_way_collision = true
@@ -69,25 +74,20 @@ one_way_collision = true
 physics_material_override = SubResource("PhysicsMaterial_mxu26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(1063.86, 152.727)
+position = Vector2(945.311, 157.019)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uh02v")
-
-[node name="Moonlight-preview-big" type="Sprite2D" parent="."]
-position = Vector2(585.5, 145.5)
-scale = Vector2(3.27639, 2.63542)
-texture = ExtResource("2_4s0v2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(589, 222)
 scale = Vector2(1.125, 1.05455)
 
 [node name="Tohu" parent="." instance=ExtResource("9_wl8ix")]
-position = Vector2(1164, 123)
+position = Vector2(893, 37)
 scale = Vector2(2, 2)
 
 [node name="Sevenee" parent="." instance=ExtResource("13_a4jal")]
-position = Vector2(1941, 143)
+position = Vector2(1991, 36)
 scale = Vector2(2, 2)
 
 [node name="Buttons" type="Node2D" parent="."]

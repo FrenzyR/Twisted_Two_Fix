@@ -5,7 +5,7 @@ namespace project_attempt.Scripts;
 
 public partial class Healthbar : ProgressBar
 {
-	private Timer _timer;
+	private Timer _healthTimer;
 	private ProgressBar _damageBar;
 	private float _health;
 	private PackedScene _sceneLoaderScene = (PackedScene) GD.Load("res://Scenes/main_menu.tscn");
@@ -29,7 +29,7 @@ public partial class Healthbar : ProgressBar
 				
 			if(_health < previousHealth)
 			{
-				_timer.Start();
+				_healthTimer.Start();
 			}
 			else
 			{
@@ -42,8 +42,8 @@ public partial class Healthbar : ProgressBar
 	public override void _Ready()
 	{
 		
-		this._timer = (Timer)GetNode("HealthbarTimer");
-		this._damageBar = GetNode<ProgressBar>("DamageBar");
+		_healthTimer = (Timer)GetNode("HealthbarTimer");
+		_damageBar = GetNode<ProgressBar>("DamageBar");
 	}
 
 	public void initialize_health(float health){
