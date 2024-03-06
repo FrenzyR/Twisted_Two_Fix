@@ -16,8 +16,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gc6di"]
 size = Vector2(105, 203.75)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c2rf5"]
-radius = 133.135
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61sod"]
+radius = 33.0
+height = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtftw"]
 radius = 62.2013
@@ -569,7 +570,8 @@ collision_mask = 2
 script = ExtResource("2_jyqwr")
 
 [node name="Special_Hitbox" type="CollisionShape2D" parent="Special_HitboxArea"]
-shape = SubResource("CircleShape2D_c2rf5")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_61sod")
 disabled = true
 
 [node name="Heavy_HitboxArea" type="Area2D" parent="."]

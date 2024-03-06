@@ -111,6 +111,10 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 	private void Take_Damage(int damage, Vector2 knockback)
 	{
 		_velocity = knockback;
+		var newPosition = Position;
+		newPosition.X += 20;
+		Position = newPosition;
+		MoveAndCollide(_velocity);
 		Healthbar.Health -= damage;
 		WasDamaged = true;
 	}

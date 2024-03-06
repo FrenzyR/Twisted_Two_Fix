@@ -13,7 +13,7 @@ public partial class MainMenu : Node2D
 	{
 		//Idea for the map->characters->game logic; Make a hashmap/array literally whatever, and when after all the slots are 
 		//picked, (map, player1, player2) it launches the scene "map", with the added child scenes of "player1" and "player2"
-		PackedScene sceneLoaderScene = (PackedScene)GD.Load("Scenes/first_map.tscn");
+		PackedScene sceneLoaderScene = (PackedScene)GD.Load("Scenes/map_selection.tscn");
 		Node sceneInstance = sceneLoaderScene.Instantiate();
 		
 		PackedScene packedScene = new PackedScene();

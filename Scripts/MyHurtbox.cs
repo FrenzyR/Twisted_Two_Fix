@@ -23,12 +23,15 @@ public partial class MyHurtbox : Area2D
 		}
 
 		hitbox.Damage = 30;
+		hitbox.Knockback = new Vector2(300, -60.5f);
 		if (hitbox.Name == "Light_HitboxArea")
 		{
+			hitbox.Knockback = new Vector2(90, -60.5f);
 			hitbox.Damage = 3;
 		}
 		else if (hitbox.Name == "Heavy_HitboxArea")
 		{
+			hitbox.Knockback = new Vector2(240, -60.5f);
 			hitbox.Damage = 20;
 		}
 		
