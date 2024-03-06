@@ -34,7 +34,7 @@ public partial class MyHurtbox : Area2D
 		
 		if (Owner.HasMethod("Take_Damage"))
 		{
-			Owner.Call("Take_Damage", hitbox.Damage);
+			Owner.Call("Take_Damage", hitbox.Damage, hitbox.Knockback);
 		}
 	}
 	

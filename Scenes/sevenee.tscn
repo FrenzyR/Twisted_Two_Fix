@@ -513,6 +513,14 @@ _data = {
 [node name="Sevenee" type="CharacterBody2D"]
 script = ExtResource("1_1a2sc")
 
+[node name="AttackDetection" type="Area2D" parent="."]
+position = Vector2(3376, 66)
+collision_layer = 0
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AttackDetection"]
+position = Vector2(-2267.5, 111.5)
+shape = SubResource("RectangleShape2D_08iyi")
+
 [node name="AreaDetection" type="Area2D" parent="."]
 position = Vector2(1688, 33)
 collision_layer = 0
@@ -595,6 +603,8 @@ libraries = {
 }
 autoplay = "idle"
 
+[connection signal="area_entered" from="AttackDetection" to="." method="_on_area_detection_area_entered"]
+[connection signal="area_exited" from="AttackDetection" to="." method="_on_area_detection_area_exited"]
 [connection signal="area_entered" from="AreaDetection" to="." method="_on_area_detection_area_entered"]
 [connection signal="area_exited" from="AreaDetection" to="." method="_on_area_detection_area_exited"]
 [connection signal="child_entered_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_entered_tree"]

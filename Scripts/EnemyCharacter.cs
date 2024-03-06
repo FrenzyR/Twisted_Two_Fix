@@ -59,7 +59,6 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		if (WasDamaged)
 		{
 			Speed = 0f;	
-			_velocity = new Vector2(85 , -60.5f);
 
 			MoveAndCollide(_velocity);
 			GD.Print(_velocity.X);
@@ -109,9 +108,9 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		
 	}
 
-	private void Take_Damage(int damage)
+	private void Take_Damage(int damage, Vector2 knockback)
 	{
-		
+		_velocity = knockback;
 		Healthbar.Health -= damage;
 		WasDamaged = true;
 	}
