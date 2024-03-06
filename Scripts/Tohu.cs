@@ -25,6 +25,7 @@ public partial class Tohu : PlayableCharacter
 		_special_hitbox.Disabled = true;
 		_heavy_hitbox.Disabled = true;
 		_light_hitbox.Disabled = true;
+		_wasDamaged = false;
 		_animationPlaying = false;
 	}
 	

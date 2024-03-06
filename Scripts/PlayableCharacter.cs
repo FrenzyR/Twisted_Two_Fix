@@ -7,6 +7,7 @@ namespace project_attempt.Scripts;
 public partial class PlayableCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
+	protected bool _wasDamaged = false;
 	protected float _speed = 650.0f;
 	public const float JumpVelocity = -400.0f;
 	protected float _health = 0;
@@ -42,11 +43,11 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		PlayCharacterAnimation();
 	}
 
-	private void Take_Damage(int damage)
+	private bool Take_Damage(int damage)
 	{
 		GD.Print("taking damage");
 		_healthbar.Health -= damage;
-		Player.Play("onhit");
+		return _wasDamaged = true;
 	}
 	
 	public void TriggerVibration()
@@ -60,6 +61,12 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 			return;
 		}
 
+		if (_wasDamaged)
+		{
+			Player.Play("onhit");
+			_wasDamaged = false;
+			_animationPlaying = false;
+		}
 		if (Input.GetActionStrength("ui_right") != 0)
 		{
 			Player.SpeedScale = 4;
@@ -78,7 +85,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			Player.Play("heavy");
-			
+			_animationPlaying = false;
 			
 			_speed = 0.0f;
 		}
@@ -86,14 +93,15 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		{
 			Player.SpeedScale = 4;	
 			Player.Play("light");
+			_animationPlaying = false;
 			_speed = 0.0f;
 		}
 		
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			Player.Play("special");
+			_animationPlaying = false;
 			
-			_speed = 0.0f;
 			
 		}
 		

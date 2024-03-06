@@ -86,7 +86,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_komqk"]
 resource_name = "backward"
 length = 0.95
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -138,7 +137,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_gfv08"]
 resource_name = "block"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -191,7 +189,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_ycjtv"]
 resource_name = "heavy"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -244,7 +241,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_rsnws"]
 resource_name = "idle"
 length = 0.7
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -297,7 +293,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_8blji"]
 resource_name = "light"
 length = 0.7
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -401,7 +396,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_qx1ot"]
 resource_name = "run"
 length = 0.75
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -454,7 +448,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_36pdm"]
 resource_name = "special"
 length = 2.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -606,3 +599,4 @@ autoplay = "idle"
 [connection signal="area_exited" from="AreaDetection" to="." method="_on_area_detection_area_exited"]
 [connection signal="child_entered_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_entered_tree"]
 [connection signal="child_exiting_tree" from="HurtboxArea/Hurtbox" to="." method="_on_hurtbox_child_exiting_tree"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

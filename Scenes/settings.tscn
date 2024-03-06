@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcubteabh08l3"]
+
+[ext_resource type="Texture2D" uid="uid://cg3uu4qede48c" path="res://Resources/HisSprites/1.png" id="1_vxs73"]
+[ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="2_mr84k"]
+
+[sub_resource type="Theme" id="Theme_q4lio"]
+default_font = ExtResource("2_mr84k")
+default_font_size = 20
+
+[node name="Settings" type="Node2D"]
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(1165.5, 528)
+scale = Vector2(1.48187, 1.23556)
+texture = ExtResource("1_vxs73")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 218.0
+offset_top = 317.0
+offset_right = 435.0
+offset_bottom = 415.0
+scale = Vector2(4, 4)
+theme = SubResource("Theme_q4lio")
+text = "language"
