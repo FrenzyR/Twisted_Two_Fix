@@ -30,14 +30,19 @@ scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_qh8gk")
 action = "secondMap"
 
-[node name="The1" type="Sprite2D" parent="."]
+[node name="MapOne" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1194.02, 531.52)
 scale = Vector2(1.86403, 1.59589)
 texture = ExtResource("2_d2olh")
 
-[node name="The2" type="Sprite2D" parent="."]
+[node name="MapTwo" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1194.02, 520.98)
-scale = Vector2(1.85934, 1.60839)
+position = Vector2(1193, 527)
+scale = Vector2(1.864, 1.599)
 texture = ExtResource("3_y5wuh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
