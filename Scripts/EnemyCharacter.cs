@@ -7,6 +7,7 @@ namespace project_attempt.Scripts;
 public partial class EnemyCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
+	CollisionShape2D areaDetection;
 	protected bool WasDamaged = false;
 	protected float Speed = 350.0f;
 	public const float JumpVelocity = -400.0f;
@@ -57,7 +58,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (WasDamaged)
 		{
-			
+			Speed = 0f;	
 			_velocity = new Vector2(85 , -60.5f);
 
 			MoveAndCollide(_velocity);
@@ -85,7 +86,9 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		if (WasDamaged)
 		{
 			GD.Print("hit");
-			
+			areaDetection = GetNode<CollisionShape2D>("AreaDetection/TriggeredCollision");
+			areaDetection.Disabled = true;
+			Player.Stop();
 			
 			Player.Play("onhit");
 			WasDamaged = false;
@@ -145,6 +148,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		{
 			GD.Print("Animation finished: ", anim);	
 		}
+		areaDetection.Disabled = false;
 		Player.SpeedScale = 2;
 		Speed = 350f;
 		SpecialHitbox.Disabled = true;

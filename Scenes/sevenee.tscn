@@ -9,12 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://b1pyclgxdr2iq" path="res://Resources/sevenee/Nee_Run.png" id="7_4d2n7"]
 [ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="8_1trn4"]
 [ext_resource type="Script" path="res://Scripts/MyHitbox.cs" id="9_yfelv"]
-[ext_resource type="Texture2D" uid="uid://dcv1s4636hqtv" path="res://Resources/sevenee/Nee_Block.png" id="10_cpgvw"]
-[ext_resource type="Texture2D" uid="uid://gcsnv7mf0s6p" path="res://Resources/sevenee/Nee_Special.png" id="11_ahhcv"]
-[ext_resource type="Texture2D" uid="uid://d4bixrop11a3i" path="res://Resources/sevenee/Nee_Heavy.png" id="12_s8fr1"]
+[ext_resource type="Texture2D" uid="uid://dcv1s4636hqtv" path="res://Resources/HisSprites/SevenBloc_Ass_es.png" id="10_cpgvw"]
+[ext_resource type="Texture2D" uid="uid://gcsnv7mf0s6p" path="res://Resources/HisSprites/SevenSpecia_Ass_es.png" id="11_ahhcv"]
+[ext_resource type="Texture2D" uid="uid://d4bixrop11a3i" path="res://Resources/HisSprites/SevenHEAVY_Ass_es.png" id="12_s8fr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08iyi"]
-size = Vector2(176, 17)
+size = Vector2(217, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ij6y"]
 size = Vector2(105, 203.75)
@@ -517,8 +517,8 @@ script = ExtResource("1_1a2sc")
 position = Vector2(1688, 33)
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
-position = Vector2(-2247, 112.5)
+[node name="TriggeredCollision" type="CollisionShape2D" parent="AreaDetection"]
+position = Vector2(-2267.5, 111.5)
 shape = SubResource("RectangleShape2D_08iyi")
 
 [node name="HurtboxArea" type="Area2D" parent="."]
