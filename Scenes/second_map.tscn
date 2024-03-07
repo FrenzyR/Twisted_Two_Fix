@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ls2mv22tjvcd"]
 
 [ext_resource type="Texture2D" uid="uid://7hauveh75jh2" path="res://Maps and OST/night cities files/backgrounds/moonlight/moonlight-preview-big.png" id="1_bcupq"]
-[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_d880v"]
+[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/player_tohu.tscn" id="9_d880v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8m54q"]
 

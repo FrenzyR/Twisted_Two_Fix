@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://hmcu054cmqm6"]
+
+[ext_resource type="Script" path="res://Scripts/credits.cs" id="1_45asy"]
+[ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://Maps and OST/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_n205b"]
+[ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="3_gx5gs"]
+[ext_resource type="PackedScene" uid="uid://vheuf2vtf1qu" path="res://Scenes/select_click.tscn" id="4_ea86b"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_5hj3f"]
+[ext_resource type="AudioStream" uid="uid://ce7gwflioi4in" path="res://Maps and OST/night cities files/music/synthwave-palms/synthwave-palms.mp3" id="6_v8bbg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsy8r"]
+font = ExtResource("3_gx5gs")
+font_size = 30
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ixh"]
+size = Vector2(500, 180)
+
+[sub_resource type="Theme" id="Theme_wp0ry"]
+default_font_size = 60
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_45asy")
+
+[node name="Neon-preiview-big" type="Sprite2D" parent="."]
+position = Vector2(1181.75, 494.75)
+scale = Vector2(2.06641, 2.48646)
+texture = ExtResource("1_n205b")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 979.0
+offset_top = 21.0
+offset_right = 2543.0
+offset_bottom = 420.0
+text = "SPRITES & OST:
+
+(Sprites)
+https://twitter.com/DanyTheGamer7
+
+(BG & OST)
+https://www.patreon.com/ansimuz
+
+(Font)
+https://finnmercury.itch.io/sci-fi-ui-elements"
+label_settings = SubResource("LabelSettings_wsy8r")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(1695, 639)
+shape = SubResource("RectangleShape2D_d3ixh")
+action = "main_menu"
+
+[node name="Button" type="Button" parent="TouchScreenButton"]
+offset_left = -251.0
+offset_top = -77.0
+offset_right = 256.0
+offset_bottom = 99.0
+theme = SubResource("Theme_wp0ry")
+text = "MENU"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SelectClick" parent="." instance=ExtResource("4_ea86b")]
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_5hj3f")]
+stream = ExtResource("6_v8bbg")
+pitch_scale = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

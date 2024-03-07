@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://chmq62nj2balw"]
+[gd_scene load_steps=11 format=3 uid="uid://chmq62nj2balw"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterSelect.cs" id="1_f2sqq"]
 [ext_resource type="Texture2D" uid="uid://cg3uu4qede48c" path="res://Resources/HisSprites/1.png" id="1_y0di4"]
 [ext_resource type="Texture2D" uid="uid://bfn5oup6e3c2c" path="res://Resources/HisSprites/2.png" id="2_uqo7j"]
+[ext_resource type="Texture2D" uid="uid://clxpwscogwr6" path="res://Resources/HisSprites/select2.png" id="3_58403"]
 [ext_resource type="Texture2D" uid="uid://yuc78wl781ev" path="res://Resources/HisSprites/21.png" id="3_abc8t"]
+[ext_resource type="Texture2D" uid="uid://bgkbhqn8dry4t" path="res://Resources/HisSprites/select1.png" id="4_cpyah"]
 [ext_resource type="Texture2D" uid="uid://dpliwdpy7i7ul" path="res://Resources/HisSprites/22.png" id="4_d2e71"]
-[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="6_eht2x"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="7_rl2ea"]
+[ext_resource type="AudioStream" uid="uid://ce7gwflioi4in" path="res://Maps and OST/night cities files/music/synthwave-palms/synthwave-palms.mp3" id="8_mbwlk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dg00"]
 
@@ -16,6 +19,19 @@ script = ExtResource("1_f2sqq")
 position = Vector2(1156, 529)
 scale = Vector2(1.47875, 1.29389)
 texture = ExtResource("1_y0di4")
+
+[node name="CharacterSelectEn" type="Sprite2D" parent="BasicBackground"]
+position = Vector2(-2.02875, 14.6844)
+rotation = -0.153589
+scale = Vector2(1, 0.773)
+texture = ExtResource("3_58403")
+
+[node name="CharacterSelectEs" type="Sprite2D" parent="BasicBackground"]
+position = Vector2(-20.9637, 4.63718)
+rotation = -0.175114
+scale = Vector2(0.678665, 0.77074)
+skew = 0.0404776
+texture = ExtResource("4_cpyah")
 
 [node name="NotSelected" type="Sprite2D" parent="BasicBackground"]
 position = Vector2(-4.05747, -65.6934)
@@ -49,6 +65,8 @@ action = "sevenee"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_eht2x")]
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("7_rl2ea")]
+stream = ExtResource("8_mbwlk")
+pitch_scale = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vheuf2vtf1qu"]
+
+[ext_resource type="AudioStream" uid="uid://c5lm2b6okxnyc" path="res://Maps and OST/night cities files/music/selectClick.wav" id="1_qouet"]
+
+[node name="SelectClick" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_qouet")
+volume_db = 24.0
+pitch_scale = 0.9

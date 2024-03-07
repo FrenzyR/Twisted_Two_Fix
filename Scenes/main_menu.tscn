@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://co8s56nvjh071"]
+[gd_scene load_steps=10 format=3 uid="uid://co8s56nvjh071"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_yqcbg"]
 [ext_resource type="Texture2D" uid="uid://cg3uu4qede48c" path="res://Resources/HisSprites/1.png" id="5_2lia0"]
 [ext_resource type="Texture2D" uid="uid://rs27nymj3w54" path="res://Resources/HisSprites/3.png" id="5_18xw7"]
-[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_gvox1"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_fm0td"]
+[ext_resource type="Texture2D" uid="uid://bvejl5l4nnmof" path="res://Resources/HisSprites/32.png" id="5_iikw2"]
 [ext_resource type="Texture2D" uid="uid://bfn5oup6e3c2c" path="res://Resources/HisSprites/2.png" id="6_lrbhe"]
+[ext_resource type="PackedScene" uid="uid://vheuf2vtf1qu" path="res://Scenes/select_click.tscn" id="6_wlhoi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2d1ir"]
 radius = 0.01
@@ -24,10 +26,15 @@ position = Vector2(-4.02692, -60.7664)
 scale = Vector2(0.991611, 1.12409)
 texture = ExtResource("6_lrbhe")
 
-[node name="3" type="Sprite2D" parent="MenuBackground"]
+[node name="versusEn" type="Sprite2D" parent="MenuBackground"]
 position = Vector2(-26.8457, 59.1241)
 scale = Vector2(0.671141, 0.821168)
 texture = ExtResource("5_18xw7")
+
+[node name="versusEs" type="Sprite2D" parent="MenuBackground"]
+position = Vector2(2.01343, 71.4415)
+scale = Vector2(0.671141, 0.821166)
+texture = ExtResource("5_iikw2")
 
 [node name="SettingsButton" type="TouchScreenButton" parent="."]
 texture_filter = 1
@@ -53,4 +60,11 @@ scale = Vector2(21.978, 30)
 shape = SubResource("CapsuleShape2D_t1gos")
 action = "credits"
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_gvox1")]
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_fm0td")]
+
+[node name="SelectClick" parent="." instance=ExtResource("6_wlhoi")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

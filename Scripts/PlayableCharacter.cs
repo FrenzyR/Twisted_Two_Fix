@@ -7,72 +7,103 @@ namespace project_attempt.Scripts;
 public partial class PlayableCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
-	protected bool _wasDamaged = false;
-	protected float _speed = 650.0f;
+	protected bool WasDamaged = false;
+	public float Speed = 650.0f;
 	public const float JumpVelocity = -400.0f;
-	protected float _health = 0;
-	protected Healthbar _healthbar = null;
+	protected float Health = 0;
+	public Healthbar Healthbar = null;
 	private Vector2 _velocity;
 	protected Node ParentNode;
 	private AnimationPlayer _animPlayer = new AnimationPlayer();
-	protected bool _animationPlaying = false;
+	protected bool AnimationPlaying = false;
 	private float _knockback = 1.0f;
 	protected AnimationPlayer Player;
-	protected CollisionShape2D _special_hitbox;
-	protected CollisionShape2D _heavy_hitbox;
-	protected CollisionShape2D _light_hitbox;
+	protected CollisionShape2D SpecialHitbox;
+	protected CollisionShape2D HeavyHitbox;
+	protected CollisionShape2D LightHitbox;
+	private Vector3 _accelerometer;
+	protected CollisionShape2D Hurtbox;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 	
 	
+	/// <summary>
+	/// Apaga la hurtbox si se bloquea
+	/// </summary>
+	private void turnHurtboxOff()
+	{
+		Hurtbox.Disabled = true;
+	}
+	/// <summary>
+	/// 
+	/// </summary>
 	public override void _Ready()
 	{
 		
-		this._healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
-		this._healthbar.initialize_health(100);
+		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
+		this.Healthbar.initialize_health(100);
 		
-		
+
+	}
+	/// <summary>
+	/// Lo mismo que en EnemyCharacter
+	/// </summary>
+	/// <param name="damage"></param>
+	/// <param name="knockback"></param>
+	private void Take_Damage(int damage, Vector2 knockback)
+	{
+		TriggerVibration();
+		_velocity = new Vector2(-knockback.X+30, knockback.Y);
+		var newPosition = Position;
+		newPosition.X -= 20;
+		Position = newPosition;
+		MoveAndCollide(_velocity);
+		Healthbar.Health -= damage;
+		WasDamaged = true;
 	}
 
+	/// <summary>
+	/// Se ejecuta cada frame 
+	/// </summary>
+	/// <param name="delta"></param>
 	public override void _Process(double delta)
 	{
 		this.Player = GetNode<AnimationPlayer>("AnimationPlayer");
-		
+		_accelerometer = Input.GetAccelerometer();
 		
 		PlayCharacterAnimation();
 	}
 
-	private bool Take_Damage(int damage)
-	{
-		GD.Print("taking damage");
-		_healthbar.Health -= damage;
-		return _wasDamaged = true;
-	}
-	
+	/// <summary>
+	/// Causa que vibre el telefono
+	/// </summary>
 	public void TriggerVibration()
 	{
 		Input.VibrateHandheld(1000);
 	}
+	/// <summary>
+	/// Lo mismo que en enemyCharacter
+	/// </summary>
 	protected void PlayCharacterAnimation()
 	{
-		if (_animationPlaying)
+		if (AnimationPlaying)
 		{
 			return;
 		}
 
-		if (_wasDamaged)
+		if (WasDamaged)
 		{
 			Player.Play("onhit");
-			_wasDamaged = false;
-			_animationPlaying = false;
+			WasDamaged = false;
+			AnimationPlaying = false;
 		}
 		if (Input.GetActionStrength("ui_right") != 0)
 		{
 			Player.SpeedScale = 4;
 			Player.Play("run");
 			
-			_animationPlaying = false;
+			AnimationPlaying = false;
 			
 		}
 		else if(Input.GetActionStrength("ui_left") != 0)
@@ -80,55 +111,86 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 			Player.SpeedScale = 4;
 			Player.Play("backward");
 			
-			_animationPlaying = false;
+			AnimationPlaying = false;
 		}
 		else if(Input.GetActionStrength("heavy") != 0)
 		{
 			Player.Play("heavy");
-			_animationPlaying = false;
+			AnimationPlaying = false;
 			
-			_speed = 0.0f;
+			Speed = 0.0f;
 		}
 		else if(Input.GetActionStrength("light") != 0)
 		{
 			Player.SpeedScale = 4;	
 			Player.Play("light");
-			_animationPlaying = false;
-			_speed = 0.0f;
+			AnimationPlaying = false;
+			Speed = 0.0f;
 		}
 		
 		else if(Input.GetActionStrength("special") != 0)
 		{
 			Player.Play("special");
-			_animationPlaying = false;
+			AnimationPlaying = false;
 			
 			
 		}
+		else if (_accelerometer.X < -4.0f)
+		{
+			Player.SpeedScale = 0.5f;
+			Player.Play("block");
+			AnimationPlaying = false;
+		}
 		
 	}
-
-	public void turnSpecialHitboxOn()
-	{
-			_special_hitbox.Disabled = false;
-	
-	}
+	/// <summary>
+	/// 
+	/// </summary>
 
 	public void turnLightHitboxOn()
 	{
-		_light_hitbox.Disabled = false;
+		LightHitbox.Disabled = false;
 	
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
 	public void turnHeavyHitboxOn()
 	{
-		_heavy_hitbox.Disabled = false;
+		HeavyHitbox.Disabled = false;
 	
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
+	public void turnSpecialHitboxOn()
+	{
+		SpecialHitbox.Disabled = false;
+	
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="delta"></param>
 	public override void _PhysicsProcess(double delta)
 	{
 		this._velocity = Velocity;
 		
+		
+		if (Position.Y >= 1000)
+		{
+			var position = new Vector2(Position.X, 100);
+			Position = position;
+		}
+
+		if (Position.X <= 540)
+		{
+			var position = new Vector2(570, Position.Y);
+			Position = position;
+		}
 		
 		if (!IsOnFloor())
 			_velocity.Y += Gravity * (float)delta;
@@ -137,11 +199,11 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
-			_velocity.X = direction.X * _speed * _knockback;
+			_velocity.X = direction.X * Speed * _knockback;
 		}
 		else
 		{
-			_velocity.X = Mathf.MoveToward(Velocity.X, 0, _speed);
+			_velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
 
 		Velocity = _velocity;

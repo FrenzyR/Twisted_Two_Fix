@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://nqsrsmtwsg24" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross.png" id="7_gp5pu"]
 [ext_resource type="Texture2D" uid="uid://cda3q5fd5si05" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_square_outline.png" id="8_gwgd4"]
 [ext_resource type="Texture2D" uid="uid://d3x1qd5m85fao" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle.png" id="9_6aych"]
-[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="9_wl8ix"]
+[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/player_tohu.tscn" id="9_wl8ix"]
 [ext_resource type="Texture2D" uid="uid://sxpomirbjnni" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle_outline.png" id="10_pwcer"]
 [ext_resource type="Texture2D" uid="uid://b85ceiifcjjht" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross_outline.png" id="12_woeru"]
 [ext_resource type="PackedScene" uid="uid://dgrngtlhbteof" path="res://Scenes/sevenee.tscn" id="13_a4jal"]

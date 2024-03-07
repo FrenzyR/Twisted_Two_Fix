@@ -4,16 +4,24 @@ namespace project_attempt.Scripts;
 
 public partial class MyHurtbox : Area2D
 {
+
 	public void Initialize()
 	{
 		CollisionLayer = 0;
 		CollisionMask = 2;
 	}
+	/// <summary>
+	/// Conecta la señal al evento
+	/// </summary>
 	public override void _Ready()
 	{
 		Connect("area_entered", new Callable(this, "_on_area_entered"));
 	}
 
+	/// <summary>
+	/// El evento que registra los golpes
+	/// </summary>
+	/// <param name="hitbox"></param>
 	private void _on_area_entered(MyHitbox hitbox)
 	{
 		GD.Print("hello");
@@ -31,12 +39,13 @@ public partial class MyHurtbox : Area2D
 		}
 		else if (hitbox.Name == "Heavy_HitboxArea")
 		{
-			hitbox.Knockback = new Vector2(240, -60.5f);
+			hitbox.Knockback = new Vector2(150, -60.5f);
 			hitbox.Damage = 20;
 		}
 		
 		if (Owner.HasMethod("Take_Damage"))
 		{
+
 			Owner.Call("Take_Damage", hitbox.Damage, hitbox.Knockback);
 		}
 	}

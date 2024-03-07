@@ -13,6 +13,7 @@ config_version=5
 config/name="project_attempt"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://Resources/HisSprites/LOGO2.png"
 
 [compression]
 
@@ -90,6 +91,10 @@ tohu={
 ]
 }
 sevenee={
+"deadzone": 0.5,
+"events": []
+}
+main_menu={
 "deadzone": 0.5,
 "events": []
 }

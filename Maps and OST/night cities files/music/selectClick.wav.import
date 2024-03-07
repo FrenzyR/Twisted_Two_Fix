@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5lm2b6okxnyc"
+path="res://.godot/imported/selectClick.wav-a91c69297200a06ee239531104ed16c9.sample"
+
+[deps]
+
+source_file="res://Maps and OST/night cities files/music/selectClick.wav"
+dest_files=["res://.godot/imported/selectClick.wav-a91c69297200a06ee239531104ed16c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

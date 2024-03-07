@@ -1,43 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcubteabh08l3"]
+[gd_scene load_steps=11 format=3 uid="uid://dcubteabh08l3"]
 
+[ext_resource type="Script" path="res://Scenes/settings.cs" id="1_pvaoh"]
 [ext_resource type="Texture2D" uid="uid://cg3uu4qede48c" path="res://Resources/HisSprites/1.png" id="1_vxs73"]
 [ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="2_mr84k"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="3_jumjs"]
+[ext_resource type="AudioStream" uid="uid://ce7gwflioi4in" path="res://Maps and OST/night cities files/music/synthwave-palms/synthwave-palms.mp3" id="4_44183"]
+[ext_resource type="PackedScene" uid="uid://vheuf2vtf1qu" path="res://Scenes/select_click.tscn" id="6_ojel7"]
 
 [sub_resource type="Theme" id="Theme_q4lio"]
 default_font = ExtResource("2_mr84k")
-default_font_size = 20
+default_font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_fypqj"]
+font = ExtResource("2_mr84k")
+font_size = 64
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5bl2"]
+size = Vector2(500, 180)
+
+[sub_resource type="Theme" id="Theme_6spd8"]
+default_font_size = 60
 
 [node name="Settings" type="Node2D"]
+script = ExtResource("1_pvaoh")
 
 [node name="1" type="Sprite2D" parent="."]
 position = Vector2(1165.5, 528)
 scale = Vector2(1.48187, 1.23556)
 texture = ExtResource("1_vxs73")
 
-[node name="CheckButton3" type="CheckButton" parent="."]
+[node name="MusicButton" type="CheckButton" parent="."]
 offset_left = 361.0
 offset_top = 689.0
 offset_right = 578.0
 offset_bottom = 787.0
 scale = Vector2(4, 4)
 theme = SubResource("Theme_q4lio")
-text = "sound
+text = "BATTLEMUSIC: ON
 "
 
-[node name="CheckButton2" type="CheckButton" parent="."]
-offset_left = 190.0
-offset_top = 395.0
-offset_right = 398.0
-offset_bottom = 423.0
-scale = Vector2(4, 4)
-theme = SubResource("Theme_q4lio")
-text = "highest score:"
+[node name="TimeButton" type="Label" parent="."]
+offset_left = 295.0
+offset_top = 432.0
+offset_right = 1145.0
+offset_bottom = 627.0
+text = "Fastest time:"
+label_settings = SubResource("LabelSettings_fypqj")
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="LanguageButton" type="CheckButton" parent="."]
 offset_left = 399.0
-offset_top = -81.0
-offset_right = 616.0
-offset_bottom = 17.0
+offset_top = -82.0
+offset_right = 617.0
+offset_bottom = 16.0
 scale = Vector2(4, 4)
 theme = SubResource("Theme_q4lio")
-text = "language"
+text = "language: en"
+
+[node name="Music" parent="." instance=ExtResource("3_jumjs")]
+stream = ExtResource("4_44183")
+pitch_scale = 1.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(1695, 639)
+shape = SubResource("RectangleShape2D_p5bl2")
+action = "main_menu"
+
+[node name="Button" type="Button" parent="TouchScreenButton"]
+offset_left = -251.0
+offset_top = -77.0
+offset_right = 256.0
+offset_bottom = 99.0
+theme = SubResource("Theme_6spd8")
+text = "MENU"
+
+[node name="SelectClick" parent="." instance=ExtResource("6_ojel7")]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="toggled" from="MusicButton" to="." method="_on_music_button_toggled"]
+[connection signal="toggled" from="LanguageButton" to="." method="_on_language_button_toggled"]
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

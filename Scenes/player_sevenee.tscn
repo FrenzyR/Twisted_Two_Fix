@@ -1,31 +1,32 @@
-[gd_scene load_steps=28 format=3 uid="uid://dgrngtlhbteof"]
+[gd_scene load_steps=28 format=3 uid="uid://0t3tpheuwf67"]
 
-[ext_resource type="Script" path="res://Scripts/EnemyCharacter.cs" id="1_1a2sc"]
-[ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="2_cecwh"]
-[ext_resource type="Texture2D" uid="uid://cw2xws5o2koi7" path="res://Resources/sevenee/Nee_Backward.png" id="3_h6bgd"]
-[ext_resource type="Texture2D" uid="uid://baf36vor7dtk1" path="res://Resources/sevenee/Nee_Idle.png" id="4_gpbqa"]
-[ext_resource type="Texture2D" uid="uid://bt6iqk1ys07aa" path="res://Resources/sevenee/Nee_Light.png" id="5_v378o"]
-[ext_resource type="Texture2D" uid="uid://df1y2xmh7n73w" path="res://Resources/sevenee/Nee_OnHit.png" id="6_eq1h1"]
-[ext_resource type="Texture2D" uid="uid://b1pyclgxdr2iq" path="res://Resources/sevenee/Nee_Run.png" id="7_4d2n7"]
-[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="8_1trn4"]
-[ext_resource type="Script" path="res://Scripts/MyHitbox.cs" id="9_yfelv"]
-[ext_resource type="Texture2D" uid="uid://dcv1s4636hqtv" path="res://Resources/sevenee/Nee_Block.png" id="10_cpgvw"]
-[ext_resource type="Texture2D" uid="uid://gcsnv7mf0s6p" path="res://Resources/sevenee/Nee_Special.png" id="11_ahhcv"]
-[ext_resource type="Texture2D" uid="uid://d4bixrop11a3i" path="res://Resources/sevenee/Nee_Heavy.png" id="12_s8fr1"]
+[ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="1_5v8uw"]
+[ext_resource type="Script" path="res://Scripts/Sevenee.cs" id="1_wy66p"]
+[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="2_la1yp"]
+[ext_resource type="Script" path="res://Scripts/MyHitbox.cs" id="3_fp164"]
+[ext_resource type="Texture2D" uid="uid://baf36vor7dtk1" path="res://Resources/sevenee/Nee_Idle.png" id="4_ilisv"]
+[ext_resource type="Texture2D" uid="uid://cw2xws5o2koi7" path="res://Resources/sevenee/Nee_Backward.png" id="5_faelc"]
+[ext_resource type="Texture2D" uid="uid://dcv1s4636hqtv" path="res://Resources/sevenee/Nee_Block.png" id="6_58m5f"]
+[ext_resource type="Texture2D" uid="uid://d4bixrop11a3i" path="res://Resources/sevenee/Nee_Heavy.png" id="7_447o3"]
+[ext_resource type="Texture2D" uid="uid://bt6iqk1ys07aa" path="res://Resources/sevenee/Nee_Light.png" id="8_6nwcm"]
+[ext_resource type="Texture2D" uid="uid://df1y2xmh7n73w" path="res://Resources/sevenee/Nee_OnHit.png" id="9_bl0m5"]
+[ext_resource type="Texture2D" uid="uid://b1pyclgxdr2iq" path="res://Resources/sevenee/Nee_Run.png" id="10_sg4bt"]
+[ext_resource type="Texture2D" uid="uid://gcsnv7mf0s6p" path="res://Resources/sevenee/Nee_Special.png" id="11_g3gml"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_08iyi"]
-size = Vector2(114.5, 9.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v707b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eskrk"]
 size = Vector2(105, 203.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ij6y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eik4l"]
 size = Vector2(105, 203.75)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gch08"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_judve"]
+radius = 33.0
+height = 200.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfwjg"]
 radius = 35.3553
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wd7cd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lae48"]
 radius = 61.2046
 
 [sub_resource type="Animation" id="Animation_dls5j"]
@@ -76,7 +77,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_gpbqa")]
+"values": [ExtResource("4_ilisv")]
 }
 
 [sub_resource type="Animation" id="Animation_komqk"]
@@ -92,7 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_h6bgd")]
+"values": [ExtResource("5_faelc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -143,7 +144,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("10_cpgvw")]
+"values": [ExtResource("6_58m5f")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -195,7 +196,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("12_s8fr1")]
+"values": [ExtResource("7_447o3")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -261,7 +262,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_gpbqa")]
+"values": [ExtResource("4_ilisv")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -313,7 +314,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_v378o")]
+"values": [ExtResource("8_6nwcm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -378,7 +379,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_eq1h1")]
+"values": [ExtResource("9_bl0m5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -430,7 +431,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_4d2n7")]
+"values": [ExtResource("10_sg4bt")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -482,7 +483,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("11_ahhcv")]
+"values": [ExtResource("11_g3gml")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -548,79 +549,79 @@ _data = {
 "special": SubResource("Animation_36pdm")
 }
 
-[node name="Sevenee" type="CharacterBody2D"]
-script = ExtResource("1_1a2sc")
-
-[node name="AttackDetection" type="Area2D" parent="."]
-position = Vector2(18, 9)
-collision_layer = 2
-
-[node name="AttackCollision" type="CollisionShape2D" parent="AttackDetection"]
-position = Vector2(1248, 473)
-shape = SubResource("RectangleShape2D_08iyi")
-
-[node name="Hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(1381, 472)
-shape = SubResource("RectangleShape2D_v707b")
-
-[node name="AreaDetection" type="Area2D" parent="."]
-position = Vector2(1688, 33)
-collision_layer = 2
-
-[node name="TriggeredCollision" type="CollisionShape2D" parent="AreaDetection"]
-position = Vector2(-462, 437)
-shape = SubResource("RectangleShape2D_08iyi")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_wy66p")
 
 [node name="HurtboxArea" type="Area2D" parent="."]
-position = Vector2(958, 615.75)
-collision_layer = 3
+position = Vector2(-847, 279.75)
 collision_mask = 2
-script = ExtResource("2_cecwh")
+script = ExtResource("1_5v8uw")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
 position = Vector2(422, -136.75)
-shape = SubResource("RectangleShape2D_1ij6y")
+scale = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_eskrk")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("8_1trn4")]
-offset_left = 1688.0
-offset_top = 33.0
-offset_right = 2285.0
-offset_bottom = 77.0
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("2_la1yp")]
+offset_left = 45.0
+offset_top = 37.0
+offset_right = 642.0
+offset_bottom = 81.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Light_HitboxArea" type="Area2D" parent="."]
-position = Vector2(1573, 411)
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-428, 144)
+shape = SubResource("RectangleShape2D_eik4l")
+
+[node name="Special_HitboxArea" type="Area2D" parent="."]
+position = Vector2(-232, 75)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("9_yfelv")
+script = ExtResource("3_fp164")
+
+[node name="Special_Hitbox" type="CollisionShape2D" parent="Special_HitboxArea"]
+position = Vector2(-29, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_judve")
+disabled = true
+
+[node name="Light_HitboxArea" type="Area2D" parent="."]
+position = Vector2(-232, 75)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_fp164")
 
 [node name="Light_Hitbox" type="CollisionShape2D" parent="Light_HitboxArea"]
-position = Vector2(-282, 20)
-shape = SubResource("CircleShape2D_gch08")
+position = Vector2(-79, 20)
+scale = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_qfwjg")
 disabled = true
 
 [node name="Heavy_HitboxArea" type="Area2D" parent="."]
+scale = Vector2(-1, 1)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("9_yfelv")
+script = ExtResource("3_fp164")
 
 [node name="Heavy_Hitbox" type="CollisionShape2D" parent="Heavy_HitboxArea"]
-position = Vector2(1245, 473)
-shape = SubResource("CircleShape2D_wd7cd")
+position = Vector2(282, 130)
+scale = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_lae48")
 disabled = true
 
 [node name="Nee_Animations" type="Node2D" parent="."]
-position = Vector2(678, 335)
+position = Vector2(-1127, -1)
 scale = Vector2(-1, 1)
 
 [node name="Sevenee_Animations" type="Sprite2D" parent="Nee_Animations"]
 position = Vector2(-707, 64)
-scale = Vector2(1.9, 2)
-texture = ExtResource("4_gpbqa")
+scale = Vector2(-1.9, 2)
+texture = ExtResource("4_ilisv")
 hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -629,8 +630,4 @@ libraries = {
 }
 autoplay = "idle"
 
-[connection signal="area_entered" from="AttackDetection" to="." method="on_area_attack_area_entered"]
-[connection signal="area_exited" from="AttackDetection" to="." method="on_area_attack_area_exited"]
-[connection signal="area_entered" from="AreaDetection" to="." method="_on_area_detection_area_entered"]
-[connection signal="area_exited" from="AreaDetection" to="." method="_on_area_detection_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

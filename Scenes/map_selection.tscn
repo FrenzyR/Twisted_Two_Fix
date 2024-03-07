@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://l5x1plxy564"]
+[gd_scene load_steps=11 format=3 uid="uid://l5x1plxy564"]
 
 [ext_resource type="Script" path="res://Scripts/MapSelection.cs" id="1_2ap56"]
 [ext_resource type="Texture2D" uid="uid://druylru4qjprk" path="res://Resources/HisSprites/the.png" id="1_pcs06"]
 [ext_resource type="Texture2D" uid="uid://b1224xo53bn0" path="res://Resources/HisSprites/the1.png" id="2_d2olh"]
 [ext_resource type="Texture2D" uid="uid://cme0mus6tp4i2" path="res://Resources/HisSprites/the2.png" id="3_y5wuh"]
-[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_u4dlb"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_ka0ld"]
+[ext_resource type="AudioStream" uid="uid://ce7gwflioi4in" path="res://Maps and OST/night cities files/music/synthwave-palms/synthwave-palms.mp3" id="6_ptjmo"]
+[ext_resource type="Texture2D" uid="uid://1m1d1wpjscbr" path="res://Resources/HisSprites/the22.png" id="7_1aykc"]
+[ext_resource type="Texture2D" uid="uid://ddywcqw04gygf" path="res://Resources/HisSprites/the122.png" id="8_a5rt1"]
+[ext_resource type="Texture2D" uid="uid://ub874p0yc8ka" path="res://Resources/HisSprites/the222.png" id="9_yqinb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh8gk"]
 size = Vector2(130, 28)
@@ -16,6 +20,11 @@ script = ExtResource("1_2ap56")
 position = Vector2(1193, 527)
 scale = Vector2(1.86406, 1.59861)
 texture = ExtResource("1_pcs06")
+
+[node name="SelectionBGEs" type="Sprite2D" parent="."]
+position = Vector2(1188.5, 526)
+scale = Vector2(1.86797, 1.59167)
+texture = ExtResource("7_1aykc")
 
 [node name="MapOneSelect" type="TouchScreenButton" parent="."]
 position = Vector2(1078, 81)
@@ -46,6 +55,20 @@ texture = ExtResource("3_y5wuh")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_u4dlb")]
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_ka0ld")]
+stream = ExtResource("6_ptjmo")
+pitch_scale = 1.5
+
+[node name="MapOneEs" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1179, 542.5)
+scale = Vector2(1.85, 1.54583)
+texture = ExtResource("8_a5rt1")
+
+[node name="MapTwoEs" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1180, 542.5)
+scale = Vector2(1.84062, 1.54583)
+texture = ExtResource("9_yqinb")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
