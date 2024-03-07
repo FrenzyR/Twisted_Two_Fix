@@ -1,0 +1,118 @@
+[gd_scene load_steps=17 format=3 uid="uid://bl30r252lpmqk"]
+
+[ext_resource type="Texture2D" uid="uid://bqxio3m257vd" path="res://Resources/HisSprites/sky-lines.png" id="1_a04tg"]
+[ext_resource type="Texture2D" uid="uid://c2aao0ev3ifxg" path="res://Resources/HisSprites/moonlight.png" id="2_jmiwq"]
+[ext_resource type="PackedScene" uid="uid://ddervq28wccmi" path="res://Scenes/tohu.tscn" id="2_naju0"]
+[ext_resource type="PackedScene" uid="uid://dgrngtlhbteof" path="res://Scenes/sevenee.tscn" id="3_h7kbk"]
+[ext_resource type="Texture2D" uid="uid://b5lvt3ssvqnw" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left_outline.png" id="4_h4fo2"]
+[ext_resource type="Texture2D" uid="uid://ivykbjsswcsf" path="res://Resources/Controls/Directions/Double/keyboard_arrow_left.png" id="5_y7rw5"]
+[ext_resource type="Texture2D" uid="uid://cs6yjjdwccl3j" path="res://Resources/Controls/Directions/Double/keyboard_arrow_right_outline.png" id="6_qvc5l"]
+[ext_resource type="Texture2D" uid="uid://bnmsy8w7ma74r" path="res://Resources/Controls/Directions/Double/keyboard_arrow_right.png" id="7_b7pdn"]
+[ext_resource type="Texture2D" uid="uid://b5b1ipxcpqdva" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_square.png" id="8_e06nb"]
+[ext_resource type="Texture2D" uid="uid://cda3q5fd5si05" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_square_outline.png" id="9_yxurh"]
+[ext_resource type="Texture2D" uid="uid://d3x1qd5m85fao" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle.png" id="10_2wk6w"]
+[ext_resource type="Texture2D" uid="uid://sxpomirbjnni" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle_outline.png" id="11_y7dgl"]
+[ext_resource type="Texture2D" uid="uid://nqsrsmtwsg24" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross.png" id="12_krkmb"]
+[ext_resource type="Texture2D" uid="uid://b85ceiifcjjht" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross_outline.png" id="13_n2pms"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mxu26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh02v"]
+size = Vector2(1637.83, 132.808)
+
+[node name="FirstMap" type="Node2D"]
+position = Vector2(584, 312)
+
+[node name="Sky-lines" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(586, 225)
+scale = Vector2(2.91667, 2.3375)
+texture = ExtResource("1_a04tg")
+
+[node name="Moonlight" type="Sprite2D" parent="."]
+position = Vector2(585, 208)
+scale = Vector2(3.33689, 2.74387)
+texture = ExtResource("2_jmiwq")
+
+[node name="MapPhysics" type="Node2D" parent="."]
+position = Vector2(-1, 18.5)
+scale = Vector2(1.61111, 1.39792)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPhysics"]
+physics_material_override = SubResource("PhysicsMaterial_mxu26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D"]
+position = Vector2(417.104, 462.473)
+shape = SubResource("RectangleShape2D_uh02v")
+one_way_collision = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPhysics/StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_mxu26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D/StaticBody2D"]
+position = Vector2(-271.242, 174.903)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_uh02v")
+one_way_collision = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapPhysics/StaticBody2D/StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_mxu26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPhysics/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(945.311, 157.019)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_uh02v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(589, 222)
+scale = Vector2(1.125, 1.05455)
+
+[node name="Tohu" parent="." instance=ExtResource("2_naju0")]
+position = Vector2(893, 37)
+scale = Vector2(2, 2)
+
+[node name="Sevenee" parent="." instance=ExtResource("3_h7kbk")]
+position = Vector2(1991, 36)
+scale = Vector2(2, 2)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(-1, 18.5)
+scale = Vector2(1.61111, 1.39792)
+
+[node name="Backward" type="TouchScreenButton" parent="Buttons"]
+texture_filter = 1
+position = Vector2(-348.207, 234.992)
+scale = Vector2(1.26078, 1.31892)
+texture_normal = ExtResource("4_h4fo2")
+texture_pressed = ExtResource("5_y7rw5")
+action = "ui_left"
+
+[node name="Forward" type="TouchScreenButton" parent="Buttons"]
+texture_filter = 1
+position = Vector2(-173.794, 317.257)
+scale = Vector2(1.49354, 1.62071)
+texture_normal = ExtResource("6_qvc5l")
+texture_pressed = ExtResource("7_b7pdn")
+action = "ui_right"
+
+[node name="Heavy" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(835.449, 211.385)
+scale = Vector2(1.06681, 1.26303)
+texture_normal = ExtResource("8_e06nb")
+texture_pressed = ExtResource("9_yxurh")
+action = "heavy"
+
+[node name="Special" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(954.616, 237.138)
+scale = Vector2(1.06681, 1.26303)
+texture_normal = ExtResource("10_2wk6w")
+texture_pressed = ExtResource("11_y7dgl")
+action = "special"
+
+[node name="Light" type="TouchScreenButton" parent="Buttons"]
+texture_filter = 1
+position = Vector2(835.449, 346.586)
+scale = Vector2(1.06681, 1.26303)
+texture_normal = ExtResource("12_krkmb")
+texture_pressed = ExtResource("13_n2pms")
+action = "light"

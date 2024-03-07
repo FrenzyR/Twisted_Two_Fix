@@ -14,11 +14,30 @@ position = Vector2(1165.5, 528)
 scale = Vector2(1.48187, 1.23556)
 texture = ExtResource("1_vxs73")
 
+[node name="CheckButton3" type="CheckButton" parent="."]
+offset_left = 361.0
+offset_top = 689.0
+offset_right = 578.0
+offset_bottom = 787.0
+scale = Vector2(4, 4)
+theme = SubResource("Theme_q4lio")
+text = "sound
+"
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+offset_left = 190.0
+offset_top = 395.0
+offset_right = 398.0
+offset_bottom = 423.0
+scale = Vector2(4, 4)
+theme = SubResource("Theme_q4lio")
+text = "highest score:"
+
 [node name="CheckButton" type="CheckButton" parent="."]
-offset_left = 218.0
-offset_top = 317.0
-offset_right = 435.0
-offset_bottom = 415.0
+offset_left = 399.0
+offset_top = -81.0
+offset_right = 616.0
+offset_bottom = 17.0
 scale = Vector2(4, 4)
 theme = SubResource("Theme_q4lio")
 text = "language"

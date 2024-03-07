@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://l5x1plxy564"]
+[gd_scene load_steps=7 format=3 uid="uid://l5x1plxy564"]
 
 [ext_resource type="Script" path="res://Scripts/MapSelection.cs" id="1_2ap56"]
 [ext_resource type="Texture2D" uid="uid://druylru4qjprk" path="res://Resources/HisSprites/the.png" id="1_pcs06"]
 [ext_resource type="Texture2D" uid="uid://b1224xo53bn0" path="res://Resources/HisSprites/the1.png" id="2_d2olh"]
 [ext_resource type="Texture2D" uid="uid://cme0mus6tp4i2" path="res://Resources/HisSprites/the2.png" id="3_y5wuh"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_u4dlb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh8gk"]
 size = Vector2(130, 28)
@@ -16,14 +17,14 @@ position = Vector2(1193, 527)
 scale = Vector2(1.86406, 1.59861)
 texture = ExtResource("1_pcs06")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="MapOneSelect" type="TouchScreenButton" parent="."]
 position = Vector2(1078, 81)
 rotation = -0.191986
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_qh8gk")
 action = "firstMap"
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="MapTwoSelect" type="TouchScreenButton" parent="."]
 position = Vector2(1296, 872)
 rotation = -0.261799
 scale = Vector2(20, 20)
@@ -32,7 +33,7 @@ action = "secondMap"
 
 [node name="MapOne" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1194.02, 531.52)
+position = Vector2(1193, 527)
 scale = Vector2(1.86403, 1.59589)
 texture = ExtResource("2_d2olh")
 
@@ -44,5 +45,7 @@ texture = ExtResource("3_y5wuh")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_u4dlb")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

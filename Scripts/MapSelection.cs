@@ -15,6 +15,8 @@ public partial class MapSelection : Node2D
 		var mapSelect = GetNode<Sprite2D>("SelectionBG");
 		var mapOne = GetNode<Sprite2D>("MapOne");
 		var mapTwo = GetNode<Sprite2D>("MapTwo");
+		var firstButton = GetNode<TouchScreenButton>("MapOneSelect");
+		var secondButton = GetNode<TouchScreenButton>("MapTwoSelect");
 		mapChangeTimer =  GetNode<Timer>("Timer");
 		
 		Node sceneInstance = sceneLoaderScene.Instantiate();
@@ -25,13 +27,17 @@ public partial class MapSelection : Node2D
 		Node parentNode = GetParent();
 		if (Input.GetActionStrength("firstMap") != 0)
 		{
+			secondButton.Visible = false;
+			firstButton.Visible = false;
 			mapSelect.Visible = false;
 			mapOne.Visible = true;
 			GD.Print("Entered");
-			GetTree().ChangeSceneToPacked(packedScene);
+			mapChangeTimer.Start();
 			GD.Print("Exited");
 		}
 		else if(Input.GetActionStrength("secondMap") != 0){
+			secondButton.Visible = false;
+			firstButton.Visible = false;
 			mapSelect.Visible = false;
 			mapTwo.Visible = true;
 			GD.Print("Entered");

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmdi1fypgncuc"
-path="res://.godot/imported/Tohu_Heavy.png-9e189fa963bd4f5b9f03d7a26717fb34.ctex"
+uid="uid://w0vl0h5n2iko"
+path="res://.godot/imported/12.png-9639a6b67e0cdea97bc5ae7683f30155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/tohu/Tohu_Heavy.png"
-dest_files=["res://.godot/imported/Tohu_Heavy.png-9e189fa963bd4f5b9f03d7a26717fb34.ctex"]
+source_file="res://Resources/HisSprites/12.png"
+dest_files=["res://.godot/imported/12.png-9639a6b67e0cdea97bc5ae7683f30155.ctex"]
 
 [params]
 

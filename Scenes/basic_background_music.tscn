@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://judrnqc10751"]
+
+[ext_resource type="AudioStream" uid="uid://c4bw448vcfgop" path="res://Maps and OST/night cities files/music/skylines/sky-lines.mp3" id="1_gqv4x"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_gqv4x")
+pitch_scale = 1.25
+autoplay = true
+stream_paused = true

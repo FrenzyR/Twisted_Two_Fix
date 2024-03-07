@@ -40,5 +40,4 @@ public partial class MyHurtbox : Area2D
 			Owner.Call("Take_Damage", hitbox.Damage, hitbox.Knockback);
 		}
 	}
-	
 }

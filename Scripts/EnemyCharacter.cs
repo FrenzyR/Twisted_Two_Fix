@@ -38,7 +38,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 	
 	public override void _Process(double delta)
 	{
-		
+		areaDetection = GetNode<CollisionShape2D>("AreaDetection/TriggeredCollision");
 		this.Player = GetNode<AnimationPlayer>("AnimationPlayer");
 		Player.SpeedScale = 2;
 		HeavyHitbox = (CollisionShape2D)GetNode("Heavy_HitboxArea/Heavy_Hitbox");
@@ -46,10 +46,23 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		LightHitbox = (CollisionShape2D)GetNode("Light_HitboxArea/Light_Hitbox");
 		PlayCharacterAnimation();
 	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		this._velocity = Velocity;
-		
+
+		GD.Print(GlobalPosition);
+		if (Position.Y >= 1000)
+		{
+			var position = new Vector2(Position.X, 380);
+			Position = position;
+		}
+
+		if (Position.X >= 2850)
+		{
+			var position = new Vector2(2700, Position.Y);
+			Position = position;
+		}
 		
 		if (!IsOnFloor())
 			_velocity.Y += Gravity * (float)delta;
@@ -85,7 +98,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		if (WasDamaged)
 		{
 			GD.Print("hit");
-			areaDetection = GetNode<CollisionShape2D>("AreaDetection/TriggeredCollision");
+			
 			areaDetection.Disabled = true;
 			Player.Stop();
 			
@@ -110,6 +123,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 
 	private void Take_Damage(int damage, Vector2 knockback)
 	{
+		TriggerVibration();
 		_velocity = knockback;
 		var newPosition = Position;
 		newPosition.X += 20;

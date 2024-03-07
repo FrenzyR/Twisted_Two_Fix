@@ -1,44 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://chmq62nj2balw"]
+[gd_scene load_steps=8 format=3 uid="uid://chmq62nj2balw"]
 
+[ext_resource type="Script" path="res://Scripts/CharacterSelect.cs" id="1_f2sqq"]
 [ext_resource type="Texture2D" uid="uid://cg3uu4qede48c" path="res://Resources/HisSprites/1.png" id="1_y0di4"]
 [ext_resource type="Texture2D" uid="uid://bfn5oup6e3c2c" path="res://Resources/HisSprites/2.png" id="2_uqo7j"]
 [ext_resource type="Texture2D" uid="uid://yuc78wl781ev" path="res://Resources/HisSprites/21.png" id="3_abc8t"]
 [ext_resource type="Texture2D" uid="uid://dpliwdpy7i7ul" path="res://Resources/HisSprites/22.png" id="4_d2e71"]
+[ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="6_eht2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dg00"]
 
-[node name="character_select" type="Node2D"]
+[node name="CharacterSelect" type="Node2D"]
+script = ExtResource("1_f2sqq")
 
-[node name="basicBackground" type="Sprite2D" parent="."]
+[node name="BasicBackground" type="Sprite2D" parent="."]
 position = Vector2(1156, 529)
 scale = Vector2(1.47875, 1.29389)
 texture = ExtResource("1_y0di4")
 
-[node name="notSelected" type="Sprite2D" parent="basicBackground"]
+[node name="NotSelected" type="Sprite2D" parent="BasicBackground"]
 position = Vector2(-4.05747, -65.6934)
 scale = Vector2(0.992, 1.141)
 texture = ExtResource("2_uqo7j")
 
-[node name="tohuSelected" type="Sprite2D" parent="basicBackground"]
+[node name="SeveneeSelected" type="Sprite2D" parent="BasicBackground"]
 visible = false
-position = Vector2(-4.0575, -63.3748)
-scale = Vector2(0.992, 1.134)
+position = Vector2(-4.057, -65.693)
+scale = Vector2(0.992, 1.141)
 texture = ExtResource("3_abc8t")
 
-[node name="seveneeSelected" type="Sprite2D" parent="basicBackground"]
+[node name="TohuSelected" type="Sprite2D" parent="BasicBackground"]
 visible = false
-position = Vector2(-2.70496, -66.4663)
-scale = Vector2(0.992, 1.134)
+position = Vector2(-4.057, -65.693)
+scale = Vector2(0.992, 1.141)
 texture = ExtResource("4_d2e71")
 
-[node name="tohuSelect" type="TouchScreenButton" parent="."]
+[node name="TohuSelect" type="TouchScreenButton" parent="."]
 position = Vector2(510, 596)
 scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_7dg00")
 action = "tohu"
 
-[node name="neeSelect" type="TouchScreenButton" parent="."]
+[node name="NeeSelect" type="TouchScreenButton" parent="."]
 position = Vector2(1824, 586)
 scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_7dg00")
 action = "sevenee"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_eht2x")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
