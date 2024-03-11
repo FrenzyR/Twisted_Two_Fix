@@ -12,19 +12,19 @@ public partial class MapSelection : Node2D
 	private AudioStreamPlayer2D music;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	
-    /// <summary>
-    ///  El main
-    /// </summary>
+	/// <summary>
+	///  El main
+	/// </summary>
 	public override void _Ready()
 	{
 		music = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		music.Playing = settings.Music;
 		
 	}
-    /// <summary>
-    /// Se ejecuta cada frame y se encarga de qué se muestra dependiendo del lenguaje, además de escoger el mapa
-    /// </summary>
-    /// <param name="delta"></param>
+	/// <summary>
+	/// Se ejecuta cada frame y se encarga de qué se muestra dependiendo del lenguaje, además de escoger el mapa
+	/// </summary>
+	/// <param name="delta"></param>
 	public override void _Process(double delta)
 	{
 		var mapSelect = GetNode<Sprite2D>("SelectionBG");
@@ -69,10 +69,10 @@ public partial class MapSelection : Node2D
 			}
 			secondButton.Visible = false;
 			firstButton.Visible = false;
+			selectedMap = false;
 			
-			GD.Print("Entered");
 			mapChangeTimer.Start();
-			GD.Print("Exited");
+			
 		}
 		else if(Input.GetActionStrength("secondMap") != 0){
 			
@@ -90,16 +90,13 @@ public partial class MapSelection : Node2D
 			}
 			secondButton.Visible = false;
 			firstButton.Visible = false;
-			
-			GD.Print("Entered");
 			selectedMap = true;
 			mapChangeTimer.Start();
-			GD.Print("Exited");
 		}
 	}
-    /// <summary>
-    /// 
-    /// </summary>
+	/// <summary>
+	/// 
+	/// </summary>
 	private void _on_timer_timeout()
 	{
 			GetTree().ChangeSceneToPacked(packedScene);

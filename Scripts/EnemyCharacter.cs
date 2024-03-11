@@ -9,6 +9,7 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
 	CollisionShape2D triggeredCollision;
+	private AudioStreamPlayer damageNoise;
 	protected bool WasDamaged = false;
 	public float Speed = 350.0f;
 	protected float Health = 0;
@@ -51,7 +52,8 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 	/// </summary>
 	public override void _Ready()
 	{
-		
+		damageNoise = GetNode<AudioStreamPlayer>("OnHit");
+		damageNoise.Autoplay = true;
 		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
 		this.Healthbar.initialize_health(100);
 		triggeredCollision = GetNode<CollisionShape2D>("AreaDetection/TriggeredCollision");
@@ -133,7 +135,6 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 			
 			triggeredCollision.Disabled = true;
 			Player.Stop();
-			
 			Player.Play("onhit");
 			WasDamaged = false;
 			AnimationPlaying = false;
@@ -186,6 +187,9 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 
 	private void Take_Damage(int damage, Vector2 knockback)
 	{
+		GD.Print("supposedly damaged");
+		
+		
 		TriggerVibration();
 		GD.Print("he took damage");
 		_velocity = knockback;
@@ -194,8 +198,12 @@ public partial class EnemyCharacter : Godot.CharacterBody2D
 		Position = newPosition;
 		MoveAndCollide(_velocity);
 		Healthbar.Health -= damage;
+		damageNoise.Play();
 		Player.Play("onhit");
 		WasDamaged = true;
+		
+		
+		
 	}
 
 	/// <summary>

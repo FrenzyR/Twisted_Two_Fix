@@ -11,11 +11,11 @@ public partial class settings : Node2D
 	private CheckButton languageButton;
 	private CheckButton musicButton;
 	private AudioStreamPlayer2D music;
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+	
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
 	public override void _Ready()
 	{
 		languageButton = GetNode<CheckButton>("LanguageButton");
@@ -34,7 +34,7 @@ public partial class settings : Node2D
 	/// 
 	/// </summary>
 	/// <param name="delta"></param>
-    public override void _Process(double delta)
+	public override void _Process(double delta)
 	{
 		
 		

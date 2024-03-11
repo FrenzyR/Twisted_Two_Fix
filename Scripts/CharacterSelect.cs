@@ -57,6 +57,7 @@ public partial class CharacterSelect : Node2D
 			firstButton.Visible = false;
 			charSelect.Visible = false;
 			tohu.Visible = true;
+			SelectedChar = true;
 			GD.Print("Entered");
 			moveToMapTimer.Start();
 			GD.Print("Exited");

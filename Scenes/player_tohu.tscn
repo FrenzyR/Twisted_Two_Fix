@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ddervq28wccmi"]
+[gd_scene load_steps=28 format=3 uid="uid://ddervq28wccmi"]
 
 [ext_resource type="Script" path="res://Scripts/Tohu.cs" id="1_l6l26"]
 [ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="2_sjy05"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn0yos2se6xau" path="res://Resources/tohu/Tohu_OnHit.png" id="10_6a5pj"]
 [ext_resource type="Texture2D" uid="uid://cmhotfcd0qgiw" path="res://Resources/tohu/Tohu_Run.png" id="11_1lyo7"]
 [ext_resource type="Texture2D" uid="uid://baopyuqaxhjcv" path="res://Resources/tohu/Tohu_Special.png" id="12_a4415"]
+[ext_resource type="AudioStream" uid="uid://dywyhmlq305p" path="res://Resources/HisSprites/punch-140236.mp3" id="13_xqcwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gc6di"]
 size = Vector2(105, 203.75)
@@ -639,5 +640,8 @@ hframes = 10
 [node name="Label" type="Label" parent="."]
 offset_right = 204.0
 offset_bottom = 61.0
+
+[node name="OnHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_xqcwd")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

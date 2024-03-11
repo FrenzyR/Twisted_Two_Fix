@@ -7,6 +7,7 @@ namespace project_attempt.Scripts;
 public partial class PlayableCharacter : Godot.CharacterBody2D
 {
 	[Export] protected NodePath CharacterNodePath = null;
+	private AudioStreamPlayer damageNoise;
 	protected bool WasDamaged = false;
 	public float Speed = 650.0f;
 	public const float JumpVelocity = -400.0f;
@@ -40,7 +41,7 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 	/// </summary>
 	public override void _Ready()
 	{
-		
+		damageNoise = GetNode<AudioStreamPlayer>("OnHit");
 		this.Healthbar = GetNode<Healthbar>("CanvasLayer/Healthbar");
 		this.Healthbar.initialize_health(100);
 		
@@ -61,6 +62,8 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		MoveAndCollide(_velocity);
 		Healthbar.Health -= damage;
 		WasDamaged = true;
+		damageNoise.Play();
+		Player.Play("onhit");
 	}
 
 	/// <summary>
@@ -70,7 +73,6 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 	public override void _Process(double delta)
 	{
 		this.Player = GetNode<AnimationPlayer>("AnimationPlayer");
-		_accelerometer = Input.GetAccelerometer();
 		
 		PlayCharacterAnimation();
 	}
@@ -132,15 +134,15 @@ public partial class PlayableCharacter : Godot.CharacterBody2D
 		{
 			Player.Play("special");
 			AnimationPlaying = false;
-			
-			
+
 		}
-		else if (_accelerometer.X < -4.0f)
+		else if (Input.GetAccelerometer().X <= -4.0f)
 		{
-			Player.SpeedScale = 0.5f;
+			
+			Player.SpeedScale = 1f;
 			Player.Play("block");
-			AnimationPlaying = false;
 		}
+		GD.Print(Input.GetAccelerometer().X);
 		
 	}
 	/// <summary>

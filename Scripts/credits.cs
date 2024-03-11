@@ -3,6 +3,11 @@ using System;
 
 public partial class credits : Node2D
 {
+	private bool Language;
+
+	private Label hpLabel;
+
+	private Label attacksLabel;
 	// Called when the node enters the scene tree for the first time.
 	/// <summary>
 	/// Main
@@ -11,6 +16,27 @@ public partial class credits : Node2D
 	{
 		music = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		music.Playing = settings.Music;
+		var healthbarStringEn = "If your HP falls below zero, you lose, \nif theirs does, you win, simple as that";
+		var healthbarStringEs = "Si tu vida baja de cero, pierdes,\n si la suya lo hace, ganas, así de simple";
+
+		var attacksStringEn =
+			"The Cross serves as the light attack button,\nthe square as the heavy attack button, and\nthe triangle represents the special attack";
+		var attacksStringEs =
+			"La Cruz sirve de ataque ligero,\n el cuadrado es el ataque fuerte, \n y el triangulo el ataque especial";
+
+		hpLabel = GetNode<Label>("Healthbar/Label2");
+		attacksLabel = GetNode<Label>("Node2D/Label2");
+
+		if (Language != settings.GetIsLanguageSpanish())
+		{
+			hpLabel.Text = healthbarStringEs;
+			attacksLabel.Text = attacksStringEs;
+		}
+		else
+		{
+			hpLabel.Text = healthbarStringEn;
+			attacksLabel.Text = attacksStringEn;
+		}
 	}
 
 	private PackedScene mainMenuPack;
