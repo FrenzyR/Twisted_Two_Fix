@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dgrngtlhbteof"]
+[gd_scene load_steps=29 format=3 uid="uid://dgrngtlhbteof"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyCharacter.cs" id="1_1a2sc"]
 [ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="2_cecwh"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dcv1s4636hqtv" path="res://Resources/sevenee/Nee_Block.png" id="10_cpgvw"]
 [ext_resource type="Texture2D" uid="uid://gcsnv7mf0s6p" path="res://Resources/sevenee/Nee_Special.png" id="11_ahhcv"]
 [ext_resource type="Texture2D" uid="uid://d4bixrop11a3i" path="res://Resources/sevenee/Nee_Heavy.png" id="12_s8fr1"]
+[ext_resource type="AudioStream" uid="uid://dywyhmlq305p" path="res://Resources/HisSprites/punch-140236.mp3" id="13_0xag8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08iyi"]
 size = Vector2(114.5, 9.5)
@@ -628,6 +629,10 @@ libraries = {
 "": SubResource("AnimationLibrary_ko7kk")
 }
 autoplay = "idle"
+
+[node name="OnHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_0xag8")
+pitch_scale = 0.75
 
 [connection signal="area_entered" from="AttackDetection" to="." method="on_area_attack_area_entered"]
 [connection signal="area_exited" from="AttackDetection" to="." method="on_area_attack_area_exited"]

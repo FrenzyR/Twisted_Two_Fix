@@ -1,11 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://hmcu054cmqm6"]
+[gd_scene load_steps=16 format=3 uid="uid://hmcu054cmqm6"]
 
 [ext_resource type="Script" path="res://Scripts/credits.cs" id="1_45asy"]
 [ext_resource type="Texture2D" uid="uid://dit6bmhnctvto" path="res://Maps and OST/night cities files/backgrounds/neon-alley/neon-preiview-big.png" id="1_n205b"]
 [ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="3_gx5gs"]
+[ext_resource type="PackedScene" uid="uid://g56orwkonkxu" path="res://Resources/lifebar_game/healthbar.tscn" id="3_plwwd"]
 [ext_resource type="PackedScene" uid="uid://vheuf2vtf1qu" path="res://Scenes/select_click.tscn" id="4_ea86b"]
 [ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="5_5hj3f"]
 [ext_resource type="AudioStream" uid="uid://ce7gwflioi4in" path="res://Maps and OST/night cities files/music/synthwave-palms/synthwave-palms.mp3" id="6_v8bbg"]
+[ext_resource type="Texture2D" uid="uid://nqsrsmtwsg24" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_cross.png" id="8_nlg7r"]
+[ext_resource type="Texture2D" uid="uid://b5b1ipxcpqdva" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_square.png" id="9_px2h3"]
+[ext_resource type="Texture2D" uid="uid://d3x1qd5m85fao" path="res://Resources/Controls/Attack_Buttons/Double/playstation_button_color_triangle.png" id="10_qggf7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_esdjt"]
+font = ExtResource("3_gx5gs")
+font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_wsy8r"]
 font = ExtResource("3_gx5gs")
@@ -19,6 +27,13 @@ size = Vector2(500, 180)
 [sub_resource type="Theme" id="Theme_wp0ry"]
 default_font_size = 60
 
+[sub_resource type="LabelSettings" id="LabelSettings_k8ntv"]
+line_spacing = 4.0
+font = ExtResource("3_gx5gs")
+font_size = 24
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_45asy")
 
@@ -26,6 +41,22 @@ script = ExtResource("1_45asy")
 position = Vector2(1181.75, 494.75)
 scale = Vector2(2.06641, 2.48646)
 texture = ExtResource("1_n205b")
+
+[node name="Healthbar" parent="." instance=ExtResource("3_plwwd")]
+offset_left = 45.0
+offset_top = 45.0
+offset_right = 584.0
+offset_bottom = 97.0
+
+[node name="Label2" type="Label" parent="Healthbar"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 125.0
+offset_right = 833.0
+offset_bottom = 287.0
+text = "If your HP falls below zero, you lose, 
+if theirs does, you win, simple as that"
+label_settings = SubResource("LabelSettings_esdjt")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 979.0
@@ -64,5 +95,29 @@ text = "MENU"
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_5hj3f")]
 stream = ExtResource("6_v8bbg")
 pitch_scale = 1.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PlaystationButtonColorCross" type="Sprite2D" parent="Node2D"]
+position = Vector2(167, 509)
+texture = ExtResource("8_nlg7r")
+
+[node name="PlaystationButtonColorSquare" type="Sprite2D" parent="Node2D"]
+position = Vector2(269, 402)
+texture = ExtResource("9_px2h3")
+
+[node name="PlaystationButtonColorTriangle" type="Sprite2D" parent="Node2D"]
+position = Vector2(378, 511)
+texture = ExtResource("10_qggf7")
+
+[node name="Label2" type="Label" parent="Node2D"]
+offset_left = 452.0
+offset_top = 470.0
+offset_right = 1389.0
+offset_bottom = 554.0
+text = "The Cross serves as the light attack button,
+the square as the heavy attack button, and
+the triangle represents the special attack"
+label_settings = SubResource("LabelSettings_k8ntv")
 
 [connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

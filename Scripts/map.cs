@@ -19,13 +19,17 @@ public partial class map : Node2D
 	private CharacterBody2D character;
 	private AudioStreamPlayer2D music;
 	private PackedScene packedScene;
-	
+	private AudioStreamPlayer deathSound;
+	private Timer deathTimer;
+	private Timer timer;
+
 	/// <summary>
 	/// El main, se encarga de el mapa que se visualiza a la vez que los personajes que se utilizan
 	/// </summary>
 	public override void _Ready()
 	{
-		
+		deathTimer = GetNode<Timer>("OnDeath/DeathTimer");
+		deathSound = GetNode<AudioStreamPlayer>("OnDeath");	
 		timeLabel = GetNode<Label>("timeLabel");
 		winLabel = GetNode<Label>("winLabel");
 		music = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
@@ -75,12 +79,15 @@ public partial class map : Node2D
 		Node sceneInstance = mainMenuPackedLoader.Instantiate();
 		packedScene.Pack(sceneInstance);
 		time = int.Parse(timeLabel.Text);	
-		GD.Print(time);
-		var timer = GetNode<Timer>("Timer");
+		timer = GetNode<Timer>("Timer");
 		
 		if (((PlayableCharacter)character).Healthbar.Health <= 0)
 		{
-			
+			if (!deathSound.Playing)
+			{
+				deathSound.Play();	
+				deathSound.Dispose();
+			}
 			SetLeftTimeOnFile();
 			((EnemyCharacter)tohuEnemy).Speed = 0f;
 			((EnemyCharacter)seveneeEnemy).Speed = 0f;
@@ -89,23 +96,32 @@ public partial class map : Node2D
 			((EnemyCharacter)seveneeEnemy).Dispose();
 			character.Dispose();
 			winLabel.Text = "CPU!";
-			
 			timer.Stop();
-			GetTree().ChangeSceneToPacked(packedScene);
+			if (timer.IsStopped())
+			{
+				deathTimer.Start();	
+			}
+			
 		}
 		else if 
 			(((EnemyCharacter)tohuEnemy).Healthbar.Health <= 0 ||((EnemyCharacter)seveneeEnemy).Healthbar.Health <= 0)
 		{
-			
+			if (!deathSound.Playing)
+			{
+				deathSound.Play();	
+				deathSound.Dispose();
+			}
 			SetLeftTimeOnFile();
 			winLabel.Text = "U WIN!";
 			tohuEnemy.Dispose();
 			seveneeEnemy.Dispose();
 			((PlayableCharacter)character).Speed = 0f;
-			
 			timer.Stop();
-			GetTree().ChangeSceneToPacked(packedScene);
-			
+
+			if (timer.IsStopped())
+			{
+				deathTimer.Start();	
+			}
 		}
 		
 	}
@@ -126,11 +142,17 @@ public partial class map : Node2D
 	/// </summary>
 	private void _on_timer_timeout()
 	{
+		
+		
 		if (timeLabel.Text == 0.ToString())
 		{
 			GetTree().ChangeSceneToPacked(packedScene);
 		}	
 		timeLabel.Text =(time-1)  + "";
 	}
-	
+
+	private void _on_death_timer_timeout()
+	{
+		GetTree().ChangeSceneToPacked(packedScene);
+	}
 }

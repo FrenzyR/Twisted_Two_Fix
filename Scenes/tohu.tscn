@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dagvukobphrp2"]
+[gd_scene load_steps=29 format=3 uid="uid://dagvukobphrp2"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyCharacter.cs" id="1_l3qom"]
 [ext_resource type="Script" path="res://Scripts/MyHurtbox.cs" id="2_0r8sv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cmhotfcd0qgiw" path="res://Resources/tohu/Tohu_Run.png" id="10_8tfut"]
 [ext_resource type="Texture2D" uid="uid://baopyuqaxhjcv" path="res://Resources/tohu/Tohu_Special.png" id="10_i8vln"]
 [ext_resource type="Texture2D" uid="uid://bn0yos2se6xau" path="res://Resources/tohu/Tohu_OnHit.png" id="11_k27pk"]
+[ext_resource type="AudioStream" uid="uid://dywyhmlq305p" path="res://Resources/HisSprites/punch-140236.mp3" id="13_r7o8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mkwq"]
 size = Vector2(114.5, 9.5)
@@ -646,6 +647,9 @@ hframes = 10
 [node name="Label" type="Label" parent="."]
 offset_right = 204.0
 offset_bottom = 61.0
+
+[node name="OnHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_r7o8l")
 
 [connection signal="area_entered" from="AttackDetection" to="." method="on_area_attack_area_entered"]
 [connection signal="area_exited" from="AttackDetection" to="." method="on_area_attack_area_exited"]

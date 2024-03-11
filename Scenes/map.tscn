@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bl30r252lpmqk"]
+[gd_scene load_steps=24 format=3 uid="uid://bl30r252lpmqk"]
 
 [ext_resource type="Texture2D" uid="uid://bqxio3m257vd" path="res://Resources/HisSprites/sky-lines.png" id="1_a04tg"]
 [ext_resource type="Script" path="res://Scripts/map.cs" id="1_aneox"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://judrnqc10751" path="res://Scenes/basic_background_music.tscn" id="15_k8q85"]
 [ext_resource type="AudioStream" uid="uid://daln54yjxhrde" path="res://Maps and OST/night cities files/music/moonlight/moonlight.mp3" id="16_t2nap"]
 [ext_resource type="FontFile" uid="uid://btiwusuydr2i1" path="res://Resources/Cyberphont_pixels.ttf" id="18_l4n4b"]
+[ext_resource type="AudioStream" uid="uid://c2dpxh4q3uv5d" path="res://Resources/HisSprites/ondeathsound.wav" id="19_eyim8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mxu26"]
 
@@ -158,4 +159,12 @@ label_settings = SubResource("LabelSettings_wt18c")
 process_mode = 3
 autostart = true
 
+[node name="OnDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_eyim8")
+pitch_scale = 0.75
+
+[node name="DeathTimer" type="Timer" parent="OnDeath"]
+wait_time = 5.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="OnDeath/DeathTimer" to="." method="_on_death_timer_timeout"]
